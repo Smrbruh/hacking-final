@@ -175,22 +175,12 @@ html {
   tab-size: 2;
 }
 .creator-header {
-  position: fixed;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  z-index: 9999;
-
-  width: auto;
-
+  width: 100%;
+  padding: 10px 20px;
   display: flex;
   justify-content: center;
-
-  pointer-events: none;
-}
-.creator-container {
-  pointer-events: auto;
+  position: relative;
+  z-index: 1000;
 }
 
 .creator-container {
