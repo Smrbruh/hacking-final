@@ -154,6 +154,16 @@
   --shadow-lg:        0 8px 32px rgba(0, 0, 0, 0.12);
   --shadow-glow:      0 0 24px rgba(0, 136, 204, 0.12);
   --shadow-glow-sm:   0 0 12px rgba(0, 136, 204, 0.1);
+   
+   --header-name-color: #ffffff;
+  --header-gh-color: rgba(255, 255, 255, 0.5);
+  --header-gh-hover: rgba(255, 255, 255, 0.85);
+  --header-border: rgba(255, 255, 255, 0.08);
+
+   --header-name-color: #111827;
+  --header-gh-color: #9ca3af;
+  --header-gh-hover: #4b5563;
+  --header-border: rgba(0, 0, 0, 0.08);
 }
 
 
@@ -174,19 +184,7 @@ html {
   -webkit-text-size-adjust: 100%;
   tab-size: 2;
 }
-:root {
-  --header-name-color: #111827;
-  --header-gh-color: #9ca3af;
-  --header-gh-hover: #4b5563;
-  --header-border: rgba(0, 0, 0, 0.08);
-}
 
-[data-theme="dark"] {
-  --header-name-color: #ffffff;
-  --header-gh-color: rgba(255, 255, 255, 0.5);
-  --header-gh-hover: rgba(255, 255, 255, 0.85);
-  --header-border: rgba(255, 255, 255, 0.08);
-}
 
 .creator-header {
   display: flex;
