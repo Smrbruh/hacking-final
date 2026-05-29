@@ -223,15 +223,16 @@ const Sidebar = {
     this.overlay = createElement('div', {
       className: 'sidebar-overlay',
       style: {
-        position:        'fixed',
-        inset:           '0',
-        background:      'rgba(0,0,0,0.55)',
-        zIndex:          '490',
-        opacity:         '0',
-        pointerEvents:   'none',
-        transition:      'opacity 250ms ease',
-        backdropFilter:  'blur(2px)',
-        WebkitBackdropFilter: 'blur(2px)',
+        position:      'fixed',
+        inset:         '0',
+        background:    'rgba(0,0,0,0.45)',
+        zIndex:        '490',
+        opacity:       '0',
+        pointerEvents: 'none',
+        transition:    'opacity 250ms ease',
+        /* REMOVED backdropFilter — it created a new stacking context
+           that placed all children (including sidebar) inside it,
+           making the sidebar appear "behind" the blur layer */
       },
       'aria-hidden': 'true',
     });
@@ -248,7 +249,8 @@ const Sidebar = {
     this.el.classList.add('sidebar--open');
     this.el.removeAttribute('aria-hidden');
     document.body.style.overflow = 'hidden';
-    document.body.style.touchAction = 'none';
+    /* REMOVED: touchAction = 'none' was blocking ALL touch events
+       including taps on sidebar buttons and nav links */
 
     this.overlay.style.opacity = '1';
     this.overlay.style.pointerEvents = 'auto';
@@ -265,7 +267,7 @@ const Sidebar = {
     this.el.classList.remove('sidebar--open');
     this.el.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-    document.body.style.touchAction = '';
+    /* touchAction cleanup no longer needed — was removed from openMobile */
 
     this.overlay.style.opacity = '0';
     this.overlay.style.pointerEvents = 'none';
@@ -316,7 +318,6 @@ const Sidebar = {
       // Transitioned to desktop — clean up mobile state
       this.closeMobile();
       document.body.style.overflow = '';
-      document.body.style.touchAction = '';
       if (!State.sidebarVisible) this.collapseDesktop();
       else this.expandDesktop();
     }
