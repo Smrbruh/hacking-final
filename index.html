@@ -1,0 +1,2486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HackLab – Interactive Ethical Hacking and Cybersecurity Preparation Portal based on Astana IT University Hacking Lab course." />
+  <meta name="keywords" content="ethical hacking, penetration testing, cybersecurity, OSINT, SQL injection, network scanning, Kali Linux, web security" />
+  <title>HackLab | Interactive Ethical Hacking &amp; Cybersecurity Preparation Portal</title>
+</head>
+<body class="site-body" data-theme="dark">
+
+  <!-- ============================================================
+       SITE HEADER
+  ============================================================ -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="header-inner">
+      <div class="header-brand">
+        <span class="brand-icon" aria-hidden="true">&#x1F512;</span>
+        <div class="brand-text">
+          <h1 class="brand-title">HackLab</h1>
+          <p class="brand-subtitle">Interactive Ethical Hacking &amp; Cybersecurity Preparation Portal</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <div class="header-course-info">
+          <span class="course-tag">Astana IT University</span>
+          <span class="course-tag">School of Cybersecurity</span>
+          <span class="course-tag">Senior Lecturer: Aliya Abdiraman</span>
+        </div>
+        <div class="header-actions">
+          <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme" data-action="toggle-theme">&#9728;</button>
+          <button class="btn-icon" id="sidebar-toggle" aria-label="Toggle sidebar" data-action="toggle-sidebar">&#9776;</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       LAYOUT WRAPPER
+  ============================================================ -->
+  <div class="layout-wrapper" id="layout-wrapper">
+
+    <!-- ============================================================
+         SIDEBAR NAVIGATION
+    ============================================================ -->
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Course navigation">
+      <nav class="sidebar-nav">
+        <div class="nav-section-label">Course Modules</div>
+        <ul class="nav-list" role="list">
+          <li class="nav-item">
+            <a href="#dashboard" class="nav-link nav-link--dashboard" data-week="0">
+              <span class="nav-icon">&#9776;</span>
+              <span class="nav-text">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#week1" class="nav-link" data-week="1">
+              <span class="nav-badge">01</span>
+              <span class="nav-text">Intro to Hacking Lab</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#week2" class="nav-link" data-week="2">
+              <span class="nav-badge">02</span>
+              <span class="nav-text">Information Gathering &amp; OSINT</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#week3" class="nav-link" data-week="3">
+              <span class="nav-badge">03</span>
+              <span class="nav-text">Network Scanning &amp; Vuln Detection</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#week4" class="nav-link" data-week="4">
+              <span class="nav-badge">04</span>
+              <span class="nav-text">Network Hacking &amp; WPA/WPA2</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#week5" class="nav-link" data-week="5">
+              <span class="nav-badge">05</span>
+              <span class="nav-text">Social Engineering</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#week6" class="nav-link" data-week="6">
+              <span class="nav-badge">06</span>
+              <span class="nav-text">Web Application Security</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#week7" class="nav-link" data-week="7">
+              <span class="nav-badge">07</span>
+              <span class="nav-text">Web App Attacks &amp; Auto Tools</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#week8" class="nav-link" data-week="8">
+              <span class="nav-badge">08</span>
+              <span class="nav-text">SQL Injection Vulnerabilities</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#week9" class="nav-link" data-week="9">
+              <span class="nav-badge">09</span>
+              <span class="nav-text">Advanced SQLi &amp; DB Exploitation</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#week10" class="nav-link" data-week="10">
+              <span class="nav-badge">10</span>
+              <span class="nav-text">Training Platforms &amp; Tools</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section-label nav-section-label--mt">References</div>
+        <ul class="nav-list" role="list">
+          <li class="nav-item">
+            <a href="#reading-list" class="nav-link nav-link--small">
+              <span class="nav-icon">&#128218;</span>
+              <span class="nav-text">Reading List</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#glossary" class="nav-link nav-link--small">
+              <span class="nav-icon">&#128196;</span>
+              <span class="nav-text">Glossary</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p class="sidebar-footer-text">Hacking Lab &copy; 2024–2025</p>
+        <p class="sidebar-footer-text">Astana IT University</p>
+      </div>
+    </aside>
+
+    <!-- ============================================================
+         MAIN CONTENT
+    ============================================================ -->
+    <main class="main-content" id="main-content" role="main">
+
+      <!-- ============================================================
+           DASHBOARD
+      ============================================================ -->
+      <section class="dashboard-section" id="dashboard" aria-labelledby="dashboard-title">
+        <div class="section-header">
+          <h2 class="section-title" id="dashboard-title">&#128202; Course Dashboard</h2>
+          <p class="section-subtitle">Track your progress through the Hacking Lab curriculum</p>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="dashboard-card dashboard-card--primary" data-metric="total-lectures">
+            <div class="dashboard-card__icon" aria-hidden="true">&#128218;</div>
+            <div class="dashboard-card__value" id="metric-total-lectures">10</div>
+            <div class="dashboard-card__label">Total Lectures</div>
+          </article>
+          <article class="dashboard-card dashboard-card--secondary" data-metric="total-concepts">
+            <div class="dashboard-card__icon" aria-hidden="true">&#9881;</div>
+            <div class="dashboard-card__value" id="metric-total-concepts">120+</div>
+            <div class="dashboard-card__label">Core Concepts</div>
+          </article>
+          <article class="dashboard-card dashboard-card--accent" data-metric="completed-sections">
+            <div class="dashboard-card__icon" aria-hidden="true">&#9989;</div>
+            <div class="dashboard-card__value" id="metric-completed">0</div>
+            <div class="dashboard-card__label">Completed Sections</div>
+          </article>
+          <article class="dashboard-card dashboard-card--warning" data-metric="lab-completion">
+            <div class="dashboard-card__icon" aria-hidden="true">&#127919;</div>
+            <div class="dashboard-card__value" id="metric-labs">0%</div>
+            <div class="dashboard-card__label">Lab Completion</div>
+          </article>
+          <article class="dashboard-card dashboard-card--info" data-metric="tools-covered">
+            <div class="dashboard-card__icon" aria-hidden="true">&#128295;</div>
+            <div class="dashboard-card__value">25+</div>
+            <div class="dashboard-card__label">Tools Covered</div>
+          </article>
+          <article class="dashboard-card dashboard-card--success" data-metric="exam-questions">
+            <div class="dashboard-card__icon" aria-hidden="true">&#10067;</div>
+            <div class="dashboard-card__value">80+</div>
+            <div class="dashboard-card__label">Exam Questions</div>
+          </article>
+        </div>
+
+        <!-- Progress tracker placeholder -->
+        <div class="progress-tracker" id="progress-tracker" data-component="progress-tracker">
+          <h3 class="progress-tracker__title">Weekly Progress</h3>
+          <div class="progress-grid">
+            <div class="progress-indicator" data-week="1" data-status="pending">
+              <span class="progress-indicator__week">W1</span>
+              <div class="progress-indicator__bar"><div class="progress-indicator__fill" style="width:0%"></div></div>
+              <span class="progress-indicator__label">Intro</span>
+            </div>
+            <div class="progress-indicator" data-week="2" data-status="pending">
+              <span class="progress-indicator__week">W2</span>
+              <div class="progress-indicator__bar"><div class="progress-indicator__fill" style="width:0%"></div></div>
+              <span class="progress-indicator__label">OSINT</span>
+            </div>
+            <div class="progress-indicator" data-week="3" data-status="pending">
+              <span class="progress-indicator__week">W3</span>
+              <div class="progress-indicator__bar"><div class="progress-indicator__fill" style="width:0%"></div></div>
+              <span class="progress-indicator__label">Scanning</span>
+            </div>
+            <div class="progress-indicator" data-week="4" data-status="pending">
+              <span class="progress-indicator__week">W4</span>
+              <div class="progress-indicator__bar"><div class="progress-indicator__fill" style="width:0%"></div></div>
+              <span class="progress-indicator__label">Network</span>
+            </div>
+            <div class="progress-indicator" data-week="5" data-status="pending">
+              <span class="progress-indicator__week">W5</span>
+              <div class="progress-indicator__bar"><div class="progress-indicator__fill" style="width:0%"></div></div>
+              <span class="progress-indicator__label">Social Eng.</span>
+            </div>
+            <div class="progress-indicator" data-week="6" data-status="pending">
+              <span class="progress-indicator__week">W6</span>
+              <div class="progress-indicator__bar"><div class="progress-indicator__fill" style="width:0%"></div></div>
+              <span class="progress-indicator__label">Web Sec</span>
+            </div>
+            <div class="progress-indicator" data-week="7" data-status="pending">
+              <span class="progress-indicator__week">W7</span>
+              <div class="progress-indicator__bar"><div class="progress-indicator__fill" style="width:0%"></div></div>
+              <span class="progress-indicator__label">Web Attacks</span>
+            </div>
+            <div class="progress-indicator" data-week="8" data-status="pending">
+              <span class="progress-indicator__week">W8</span>
+              <div class="progress-indicator__bar"><div class="progress-indicator__fill" style="width:0%"></div></div>
+              <span class="progress-indicator__label">SQLi</span>
+            </div>
+            <div class="progress-indicator" data-week="9" data-status="pending">
+              <span class="progress-indicator__week">W9</span>
+              <div class="progress-indicator__bar"><div class="progress-indicator__fill" style="width:0%"></div></div>
+              <span class="progress-indicator__label">Adv. SQLi</span>
+            </div>
+            <div class="progress-indicator" data-week="10" data-status="pending">
+              <span class="progress-indicator__week">W10</span>
+              <div class="progress-indicator__bar"><div class="progress-indicator__fill" style="width:0%"></div></div>
+              <span class="progress-indicator__label">Platforms</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick navigation cards -->
+        <div class="quick-nav-grid">
+          <a href="#week1" class="quick-nav-card" data-week="1">
+            <span class="quick-nav-card__number">01</span>
+            <span class="quick-nav-card__title">Introduction to Hacking Lab</span>
+            <span class="quick-nav-card__topics">Offensive/Defensive Security · Pen Testing Stages · Kali Linux</span>
+          </a>
+          <a href="#week2" class="quick-nav-card" data-week="2">
+            <span class="quick-nav-card__number">02</span>
+            <span class="quick-nav-card__title">Information Gathering &amp; OSINT</span>
+            <span class="quick-nav-card__topics">Shodan · Maltego · theHarvester · WHOIS · Google Dorking</span>
+          </a>
+          <a href="#week3" class="quick-nav-card" data-week="3">
+            <span class="quick-nav-card__number">03</span>
+            <span class="quick-nav-card__title">Network Scanning &amp; Vuln Detection</span>
+            <span class="quick-nav-card__topics">Nmap · Zenmap · Masscan · IDS/IPS Evasion</span>
+          </a>
+          <a href="#week4" class="quick-nav-card" data-week="4">
+            <span class="quick-nav-card__number">04</span>
+            <span class="quick-nav-card__title">Network Hacking &amp; WPA/WPA2</span>
+            <span class="quick-nav-card__topics">Aircrack-ng · Monitor Mode · Handshake Capture</span>
+          </a>
+          <a href="#week5" class="quick-nav-card" data-week="5">
+            <span class="quick-nav-card__number">05</span>
+            <span class="quick-nav-card__title">Social Engineering</span>
+            <span class="quick-nav-card__topics">Phishing · Pretexting · BeEF · Maltego</span>
+          </a>
+          <a href="#week6" class="quick-nav-card" data-week="6">
+            <span class="quick-nav-card__number">06</span>
+            <span class="quick-nav-card__title">Web Application Security</span>
+            <span class="quick-nav-card__topics">CIA Triad · OWASP Top 10 · CVSS · Burp Suite</span>
+          </a>
+          <a href="#week7" class="quick-nav-card" data-week="7">
+            <span class="quick-nav-card__number">07</span>
+            <span class="quick-nav-card__title">Web App Attacks &amp; Auto Tools</span>
+            <span class="quick-nav-card__topics">SAST · DAST · ZAP · Nikto · SonarQube</span>
+          </a>
+          <a href="#week8" class="quick-nav-card" data-week="8">
+            <span class="quick-nav-card__number">08</span>
+            <span class="quick-nav-card__title">SQL Injection Vulnerabilities</span>
+            <span class="quick-nav-card__topics">SQL Fundamentals · SQLi Theory · UNION Attacks</span>
+          </a>
+          <a href="#week9" class="quick-nav-card" data-week="9">
+            <span class="quick-nav-card__number">09</span>
+            <span class="quick-nav-card__title">Advanced SQLi &amp; DB Exploitation</span>
+            <span class="quick-nav-card__topics">Code Review · Defenses · sqlmap · WAF</span>
+          </a>
+          <a href="#week10" class="quick-nav-card" data-week="10">
+            <span class="quick-nav-card__number">10</span>
+            <span class="quick-nav-card__title">Training Platforms &amp; Tools</span>
+            <span class="quick-nav-card__topics">TryHackMe · HackTheBox · DVWA · WebGoat</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           WEEK 1: INTRODUCTION TO HACKING LAB
+      ============================================================ -->
+      <section class="lecture-section" id="week1" data-week="1" aria-labelledby="week1-title">
+        <div class="lecture-header">
+          <div class="lecture-week-badge">Week 01</div>
+          <h2 class="lecture-title" id="week1-title">Introduction to Hacking Lab. Offensive and Defensive Security. Penetration Testing Stages</h2>
+          <p class="lecture-instructor">Instructor: Senior Lecturer, MSc Aliya Abdiraman</p>
+        </div>
+
+        <!-- A. LECTURE OVERVIEW -->
+        <article class="lecture-subsection" id="week1-overview">
+          <h3 class="subsection-title">A. Lecture Overview</h3>
+          <p class="lecture-overview-text">
+            This foundational lecture establishes the conceptual bedrock of the entire Hacking Lab course. Students are introduced to the binary world of cybersecurity — the attackers who probe systems for weakness, and the defenders who harden them against intrusion. The lecture maps the ethical and methodological boundaries between offensive security (penetration testing, red teaming, ethical hacking) and defensive security (blue teaming, incident response, threat hunting). Students also receive their first exposure to Kali Linux, the industry-standard penetration testing distribution, and learn basic terminal navigation essential for all subsequent lab work.
+          </p>
+          <ul class="overview-objectives-list">
+            <li>Understand the terminology distinguishing ethical hackers from malicious actors</li>
+            <li>Differentiate clearly between offensive and defensive security disciplines</li>
+            <li>Map the six canonical stages of a penetration testing engagement</li>
+            <li>Install and navigate Kali Linux in a virtualized environment</li>
+          </ul>
+        </article>
+
+        <!-- B. CORE CONCEPTS -->
+        <article class="lecture-subsection" id="week1-concepts">
+          <h3 class="subsection-title">B. Core Concepts &amp; Definitions</h3>
+          <div class="concept-grid">
+            <div class="concept-card">
+              <h4 class="concept-card__term">Hacker</h4>
+              <p class="concept-card__definition">A person who explores, analyzes, and manipulates computer systems, networks, or applications — often to discover vulnerabilities. The term is morally neutral; intent determines whether the activity is constructive or destructive.</p>
+            </div>
+            <div class="concept-card concept-card--white">
+              <h4 class="concept-card__term">White Hat Hacker</h4>
+              <p class="concept-card__definition">An ethical hacker who uses offensive techniques defensively — always with explicit permission from system owners. White hats work to identify and remediate vulnerabilities before malicious actors can exploit them.</p>
+            </div>
+            <div class="concept-card concept-card--black">
+              <h4 class="concept-card__term">Black Hat Hacker</h4>
+              <p class="concept-card__definition">A malicious actor who intrudes into systems without authorization and with harmful or criminal intent — data theft, sabotage, financial fraud, or ransom. Black hat activity is illegal in virtually every jurisdiction.</p>
+            </div>
+            <div class="concept-card concept-card--gray">
+              <h4 class="concept-card__term">Gray Hat Hacker</h4>
+              <p class="concept-card__definition">A hacker who operates without prior authorization but without explicitly malicious intent — often disclosing vulnerabilities after discovering them, sometimes demanding a fee for remediation assistance. Gray hat activity occupies a legal and ethical grey zone.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Vulnerability</h4>
+              <p class="concept-card__definition">A weakness or flaw in a system, application, network, or process that could be exploited to violate security policy — compromising confidentiality, integrity, or availability.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Exploit</h4>
+              <p class="concept-card__definition">A method, code, or technique that takes advantage of a specific vulnerability to achieve an unauthorized effect — such as gaining access, escalating privileges, or causing denial of service.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Penetration Testing</h4>
+              <p class="concept-card__definition">A structured, authorized simulation of a real-world attack against a target system or network. The goal is to identify exploitable vulnerabilities before malicious actors do, and to provide remediation guidance.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Red Team</h4>
+              <p class="concept-card__definition">A group of specialists who conduct long-duration, realistic simulations of advanced persistent threats (APTs) against an organization's full infrastructure — including physical, social, and technical attack vectors.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Blue Team</h4>
+              <p class="concept-card__definition">The defensive security team responsible for protecting infrastructure, monitoring for threats, analyzing alerts, and responding to incidents. Blue teamers operate Security Operations Centers (SOCs).</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- C. EXPANDED ACADEMIC NOTES -->
+        <article class="lecture-subsection" id="week1-notes">
+          <h3 class="subsection-title">C. Expanded Academic Notes</h3>
+
+          <div class="attack-defense-grid">
+            <div class="attack-card">
+              <h4 class="card-heading card-heading--offensive">&#9888; Offensive Security</h4>
+              <p>Offensive security is a proactive discipline that simulates attacker behavior to identify weaknesses before real attackers exploit them. Core activities include:</p>
+              <ul>
+                <li><strong>Penetration Testing</strong> — time-boxed, scoped simulated attacks on systems with full authorization</li>
+                <li><strong>Red Teaming</strong> — long-duration adversarial simulations replicating nation-state or APT actors</li>
+                <li><strong>Vulnerability Research</strong> — discovering novel (zero-day) or known vulnerabilities in software</li>
+                <li><strong>Ethical Hacking</strong> — using the full toolkit of malicious techniques, lawfully, to harden systems</li>
+              </ul>
+              <p class="example-block"><strong>Real Example:</strong> Before a major bank launches a new online portal, it commissions a penetration testing firm to attempt to breach it using the same techniques a criminal would. Vulnerabilities found are patched before launch.</p>
+            </div>
+            <div class="defense-card">
+              <h4 class="card-heading card-heading--defensive">&#128737; Defensive Security</h4>
+              <p>Defensive security is the practice of protecting systems, detecting attacks in progress, and recovering from incidents. Core activities include:</p>
+              <ul>
+                <li><strong>Blue Teaming</strong> — continuous infrastructure monitoring, log analysis, and threat detection</li>
+                <li><strong>Incident Response (IR)</strong> — structured process for containing, eradicating, and recovering from breaches</li>
+                <li><strong>Threat Hunting</strong> — proactive, human-led investigation to detect hidden attacker presence</li>
+                <li><strong>Digital Forensics</strong> — post-incident investigation to reconstruct attack timelines and preserve evidence</li>
+                <li><strong>Security Awareness Training</strong> — educating employees to recognize phishing, social engineering, and policy violations</li>
+              </ul>
+              <p class="example-block"><strong>Real Example:</strong> A SIEM (Security Information and Event Management) system alerts a blue team analyst about 500 failed SSH login attempts from a single IP in 10 minutes. The analyst blocks the IP and investigates whether any logins succeeded.</p>
+            </div>
+          </div>
+
+          <!-- Penetration Testing Stages -->
+          <h4 class="subsection-subheading">The Six Stages of Penetration Testing</h4>
+          <p>Every authorized penetration test follows a structured methodology. The phases are sequential but may loop iteratively as new information is discovered.</p>
+          <ol class="pentest-stages-list">
+            <li class="stage-item" data-stage="1">
+              <div class="stage-number">01</div>
+              <div class="stage-content">
+                <h5 class="stage-title">Reconnaissance</h5>
+                <p class="stage-description">Information gathering — collecting as much data as possible about the target without triggering alerts. Techniques include OSINT (open-source intelligence), WHOIS lookups, DNS enumeration, Google dorking, social media profiling, and job listing analysis. This phase determines attack surface and entry points.</p>
+                <p class="stage-example"><em>Example: Checking LinkedIn to discover a target company uses Apache servers and AWS. Using WHOIS to find domain registration details. Using Google dorking to locate exposed configuration files.</em></p>
+              </div>
+            </li>
+            <li class="stage-item" data-stage="2">
+              <div class="stage-number">02</div>
+              <div class="stage-content">
+                <h5 class="stage-title">Scanning</h5>
+                <p class="stage-description">Active enumeration of the target network — identifying live hosts, open ports, running services, software versions, and potential vulnerabilities. Tools: Nmap, Netdiscover, Masscan, Nessus, OpenVAS. Banner grabbing reveals what software versions are exposed.</p>
+                <p class="stage-example"><em>Example: Nmap reveals port 22 (SSH) is open with an outdated OpenSSH version. Nessus confirms a known CVE against that version. This becomes a candidate for exploitation in phase 3.</em></p>
+              </div>
+            </li>
+            <li class="stage-item" data-stage="3">
+              <div class="stage-number">03</div>
+              <div class="stage-content">
+                <h5 class="stage-title">Gaining Access</h5>
+                <p class="stage-description">Exploiting discovered vulnerabilities to achieve unauthorized access. Techniques include exploiting known CVEs (via Metasploit or manually), password attacks (dictionary, brute-force, credential stuffing), phishing, and web application exploitation. This stage validates whether vulnerabilities are actually exploitable.</p>
+              </div>
+            </li>
+            <li class="stage-item" data-stage="4">
+              <div class="stage-number">04</div>
+              <div class="stage-content">
+                <h5 class="stage-title">Maintaining Access</h5>
+                <p class="stage-description">Establishing persistence to retain control over a compromised system across reboots and security tool actions. Techniques include deploying backdoors, creating new privileged accounts, installing rootkits, and privilege escalation to gain administrator or root access.</p>
+              </div>
+            </li>
+            <li class="stage-item" data-stage="5">
+              <div class="stage-number">05</div>
+              <div class="stage-content">
+                <h5 class="stage-title">Covering Tracks</h5>
+                <p class="stage-description">Minimizing forensic evidence of the attack to evade detection. Techniques: clearing authentication logs, disabling monitoring tools, hiding processes and files, timestomping (modifying file metadata), and using legitimate system utilities ("living off the land") to blend attack activity with normal operations.</p>
+              </div>
+            </li>
+            <li class="stage-item" data-stage="6">
+              <div class="stage-number">06</div>
+              <div class="stage-content">
+                <h5 class="stage-title">Reporting</h5>
+                <p class="stage-description">Documenting all findings in a structured report delivered to the client. Includes: executive summary (business risk impact), technical vulnerability details (CVE references, CVSS scores, proof-of-concept evidence), risk ratings (Critical/High/Medium/Low), and prioritized remediation recommendations.</p>
+              </div>
+            </li>
+          </ol>
+
+          <!-- Kali Linux -->
+          <h4 class="subsection-subheading">Kali Linux — The Penetration Tester's OS</h4>
+          <p>Kali Linux is a Debian-based Linux distribution maintained by Offensive Security, specifically designed for penetration testing and security auditing. It ships with 600+ pre-installed security tools organized into 13 categories:</p>
+          <div class="concept-grid concept-grid--small">
+            <div class="concept-card"><strong>Information Gathering</strong> — OSINT, DNS, WHOIS tools</div>
+            <div class="concept-card"><strong>Vulnerability Analysis</strong> — Nessus, OpenVAS integration</div>
+            <div class="concept-card"><strong>Wireless Attacks</strong> — Aircrack-ng, Airmon-ng suite</div>
+            <div class="concept-card"><strong>Web Applications</strong> — Burp Suite, OWASP ZAP, Nikto</div>
+            <div class="concept-card"><strong>Exploitation Tools</strong> — Metasploit Framework</div>
+            <div class="concept-card"><strong>Stress Testing</strong> — DoS testing utilities</div>
+            <div class="concept-card"><strong>Forensics Tools</strong> — Autopsy, Binwalk</div>
+            <div class="concept-card"><strong>Sniffing &amp; Spoofing</strong> — Wireshark, Ettercap</div>
+            <div class="concept-card"><strong>Password Attacks</strong> — John the Ripper, Hashcat, Hydra</div>
+            <div class="concept-card"><strong>Maintaining Access</strong> — Backdoor and persistence tools</div>
+            <div class="concept-card"><strong>Reverse Engineering</strong> — Ghidra, radare2</div>
+            <div class="concept-card"><strong>Reporting Tools</strong> — Dradis, report generators</div>
+            <div class="concept-card"><strong>Hardware Hacking</strong> — Firmware analysis tools</div>
+          </div>
+
+          <h4 class="subsection-subheading">Essential Kali Linux Terminal Commands</h4>
+          <table class="comparison-table" aria-label="Kali Linux terminal commands">
+            <thead>
+              <tr>
+                <th scope="col">Command</th>
+                <th scope="col">Purpose</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>ls</code></td><td>List files in directory</td><td><code>ls -la /etc</code></td></tr>
+              <tr><td><code>cd</code></td><td>Change directory</td><td><code>cd /var/log</code></td></tr>
+              <tr><td><code>pwd</code></td><td>Print working directory</td><td><code>pwd</code></td></tr>
+              <tr><td><code>mkdir</code></td><td>Create directory</td><td><code>mkdir -p /home/kali/lab/{test,exploit}</code></td></tr>
+              <tr><td><code>touch</code></td><td>Create empty file</td><td><code>touch myfile.txt</code></td></tr>
+              <tr><td><code>cat</code></td><td>Display file contents</td><td><code>cat /etc/passwd</code></td></tr>
+              <tr><td><code>echo</code></td><td>Write text to file</td><td><code>echo -e "line1\nline2" &gt; file.txt</code></td></tr>
+              <tr><td><code>grep</code></td><td>Search text patterns</td><td><code>grep "root" /etc/passwd</code></td></tr>
+              <tr><td><code>find</code></td><td>Search for files</td><td><code>find / -name "*.conf" 2&gt;/dev/null</code></td></tr>
+              <tr><td><code>locate</code></td><td>Fast file search (database)</td><td><code>locate nmap</code></td></tr>
+              <tr><td><code>which</code></td><td>Find binary in PATH</td><td><code>which python3</code></td></tr>
+              <tr><td><code>man</code></td><td>Display manual page</td><td><code>man nmap</code></td></tr>
+              <tr><td><code>history</code></td><td>Show command history</td><td><code>history | grep nmap</code></td></tr>
+              <tr><td><code>sort</code></td><td>Sort file contents</td><td><code>sort myfile.txt</code></td></tr>
+              <tr><td><code>|</code> (pipe)</td><td>Chain command output</td><td><code>ls | grep ".txt"</code></td></tr>
+              <tr><td><code>&gt;</code></td><td>Redirect output to file</td><td><code>ls &gt; ls-list.txt</code></td></tr>
+              <tr><td><code>Ctrl+C</code></td><td>Interrupt running process</td><td>Stop active scan</td></tr>
+              <tr><td><code>Ctrl+R</code></td><td>Reverse search history</td><td>Find previous commands</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <!-- D. TOOLS -->
+        <article class="lecture-subsection" id="week1-tools">
+          <h3 class="subsection-title">D. Tools and Platforms</h3>
+          <div class="tool-grid">
+            <div class="tool-card" data-tool="kali-linux" data-category="platform">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Kali Linux</h4>
+                <span class="tool-card__badge tool-card__badge--platform">Platform</span>
+              </div>
+              <p class="tool-card__purpose">Debian-based Linux distribution pre-loaded with 600+ security and penetration testing tools</p>
+              <dl class="tool-card__meta">
+                <dt>Category</dt><dd>Operating System / Pentest Distribution</dd>
+                <dt>Usage</dt><dd>Offensive (primary testing OS)</dd>
+                <dt>URL</dt><dd><a href="https://www.kali.org/" rel="noopener noreferrer" target="_blank">kali.org</a></dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="virtualbox" data-category="virtualization">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">VirtualBox</h4>
+                <span class="tool-card__badge tool-card__badge--platform">Virtualization</span>
+              </div>
+              <p class="tool-card__purpose">Free, open-source hypervisor for running virtual machines — used to safely run Kali Linux on any host OS</p>
+              <dl class="tool-card__meta">
+                <dt>Recommended RAM</dt><dd>4 GB for Kali VM</dd>
+                <dt>Disk</dt><dd>20 GB virtual hard disk</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="metasploit" data-category="exploitation">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Metasploit Framework</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">Offensive</span>
+              </div>
+              <p class="tool-card__purpose">The world's most widely used penetration testing framework — provides modules for exploiting known vulnerabilities, post-exploitation, and payload generation</p>
+              <dl class="tool-card__meta">
+                <dt>Category</dt><dd>Exploitation Framework</dd>
+                <dt>Usage</dt><dd>Offensive — Gaining Access phase</dd>
+              </dl>
+            </div>
+          </div>
+        </article>
+
+        <!-- G. MUST MEMORIZE -->
+        <article class="lecture-subsection must-memorize" id="week1-memorize">
+          <h3 class="subsection-title">&#11088; Must Memorize — Week 1</h3>
+          <div class="memorize-grid">
+            <div class="memorize-card"><strong>White Hat</strong> = Ethical hacker with permission</div>
+            <div class="memorize-card"><strong>Black Hat</strong> = Malicious, unauthorized attacker</div>
+            <div class="memorize-card"><strong>Gray Hat</strong> = Unauthorized but not malicious</div>
+            <div class="memorize-card"><strong>6 Pentest Stages</strong>: Recon → Scan → Gain → Maintain → Cover → Report</div>
+            <div class="memorize-card"><strong>Offensive</strong> = Proactive attack simulation</div>
+            <div class="memorize-card"><strong>Defensive</strong> = Protective monitoring &amp; response</div>
+            <div class="memorize-card"><strong>Kali</strong> = Debian-based, Offensive Security, 600+ tools</div>
+            <div class="memorize-card"><strong>Vulnerability</strong> ≠ Exploit. Vuln is the weakness; exploit is the method.</div>
+          </div>
+        </article>
+
+        <!-- H. EXAM CHEAT SHEET -->
+        <article class="lecture-subsection exam-cheatsheet" id="week1-cheatsheet">
+          <h3 class="subsection-title">&#128196; Exam Cheat Sheet — Week 1</h3>
+          <div class="cheatsheet-grid">
+            <div class="cheatsheet-block">
+              <h5>Hacker Types</h5>
+              <p>White (ethical) | Black (malicious) | Gray (no permission, no malice)</p>
+            </div>
+            <div class="cheatsheet-block">
+              <h5>Pentest Phases</h5>
+              <p>1.Recon 2.Scan 3.Gain Access 4.Maintain 5.Cover Tracks 6.Report</p>
+            </div>
+            <div class="cheatsheet-block">
+              <h5>Offensive Security Tools</h5>
+              <p>Metasploit, Hydra, John, Nmap, Burp Suite</p>
+            </div>
+            <div class="cheatsheet-block">
+              <h5>Defensive Security</h5>
+              <p>IDS/IPS, SIEM, Firewall, Incident Response, Threat Hunting</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- I. MNEMONICS -->
+        <article class="lecture-subsection mnemonic-section" id="week1-mnemonics">
+          <h3 class="subsection-title">&#129504; Mnemonics &amp; Memory Aids</h3>
+          <div class="mnemonic-grid">
+            <div class="mnemonic-card">
+              <h5>6 Pentest Stages</h5>
+              <p class="mnemonic-phrase">"<strong>R</strong>eally <strong>S</strong>mart <strong>G</strong>uys <strong>M</strong>ake <strong>C</strong>lever <strong>R</strong>eports"</p>
+              <p class="mnemonic-expansion">Recon → Scan → Gain → Maintain → Cover → Report</p>
+            </div>
+            <div class="mnemonic-card">
+              <h5>Hat Colors</h5>
+              <p class="mnemonic-phrase">"<strong>W</strong>hite = Welcome, <strong>B</strong>lack = Bad, <strong>G</strong>ray = Grey area"</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- J. EXAM QUESTIONS -->
+        <article class="lecture-subsection exam-questions" id="week1-questions">
+          <h3 class="subsection-title">&#10067; Likely Exam Questions — Week 1</h3>
+          <ol class="exam-question-list">
+            <li class="exam-question">
+              <p class="question-text">Q: What is the difference between offensive and defensive security? Give examples of each.</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>Offensive security proactively simulates attacks to find vulnerabilities before malicious actors do. Examples: penetration testing, red teaming, ethical hacking. Defensive security focuses on protecting systems and responding to attacks. Examples: firewalls, IDS/IPS, incident response, threat hunting, SIEM. Both disciplines are complementary — red team findings drive blue team improvements.</p>
+              </details>
+            </li>
+            <li class="exam-question">
+              <p class="question-text">Q: List and describe the six stages of a penetration test.</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>1. <strong>Reconnaissance</strong> — passive and active information gathering about the target. 2. <strong>Scanning</strong> — identifying open ports, services, and vulnerabilities. 3. <strong>Gaining Access</strong> — exploiting discovered vulnerabilities to enter the system. 4. <strong>Maintaining Access</strong> — establishing persistence through backdoors or elevated privileges. 5. <strong>Covering Tracks</strong> — deleting logs and hiding evidence of intrusion. 6. <strong>Reporting</strong> — documenting all findings with risk ratings and remediation recommendations.</p>
+              </details>
+            </li>
+            <li class="exam-question">
+              <p class="question-text">Q: What is the difference between a vulnerability and an exploit?</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>A <strong>vulnerability</strong> is a weakness or flaw in a system — for example, an unpatched version of Apache with a known buffer overflow bug. An <strong>exploit</strong> is the specific method, code, or technique that takes advantage of that vulnerability to achieve an unauthorized outcome. Every exploit targets a vulnerability, but not every vulnerability has a publicly available exploit.</p>
+              </details>
+            </li>
+            <li class="exam-question">
+              <p class="question-text">Q: What is Kali Linux and why is it used for penetration testing?</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>Kali Linux is a Debian-based Linux distribution maintained by Offensive Security specifically for penetration testing and digital forensics. It is used because it comes pre-installed with 600+ security tools (Nmap, Metasploit, Burp Suite, Aircrack-ng, etc.), is open-source, regularly updated, highly customizable, and has extensive community support. It eliminates setup overhead so testers can focus on testing.</p>
+              </details>
+            </li>
+          </ol>
+        </article>
+
+        <!-- L. FLASHCARD PLACEHOLDER -->
+        <article class="lecture-subsection flashcard-section" id="week1-flashcards">
+          <h3 class="subsection-title">&#128266; Flashcards — Week 1</h3>
+          <p class="placeholder-note">Interactive flashcards will be enabled in a future update. Cards are pre-loaded below.</p>
+          <div class="flashcard-container" id="flashcard-container-w1" data-week="1" data-component="flashcard-deck">
+            <div class="flashcard" data-card-id="w1-c1" data-front="What is a White Hat Hacker?" data-back="An ethical hacker who tests systems with explicit permission from system owners."></div>
+            <div class="flashcard" data-card-id="w1-c2" data-front="What are the 6 stages of penetration testing?" data-back="Reconnaissance, Scanning, Gaining Access, Maintaining Access, Covering Tracks, Reporting"></div>
+            <div class="flashcard" data-card-id="w1-c3" data-front="What is the difference between Vulnerability and Exploit?" data-back="A vulnerability is a weakness; an exploit is the method used to take advantage of it."></div>
+            <div class="flashcard" data-card-id="w1-c4" data-front="What is Kali Linux maintained by?" data-back="Offensive Security"></div>
+            <div class="flashcard" data-card-id="w1-c5" data-front="How many tools does Kali Linux ship with?" data-back="600+ pre-installed security tools"></div>
+            <p class="flashcard-placeholder-text">5 flashcards ready — click to flip (JavaScript required)</p>
+          </div>
+        </article>
+
+        <!-- M. QUIZ PLACEHOLDER -->
+        <div class="quiz-container" id="quiz-container-w1" data-week="1" data-component="quiz">
+          <h3 class="quiz-title">&#127891; Week 1 Quiz</h3>
+          <p class="quiz-placeholder-text">Quiz system will be activated in a future update. 10 questions covering Week 1 content are pre-loaded.</p>
+          <div class="quiz-question-bank" data-week="1" aria-hidden="true">
+            <!-- Quiz data attributes for JS injection -->
+            <div class="quiz-question" data-q="1" data-correct="b" data-question="Which hacker type has explicit authorization to test systems?" data-a="Black Hat" data-b="White Hat" data-c="Gray Hat" data-d="Script Kiddie"></div>
+            <div class="quiz-question" data-q="2" data-correct="c" data-question="Which pentest stage involves establishing persistence on a system?" data-a="Reconnaissance" data-b="Scanning" data-c="Maintaining Access" data-d="Covering Tracks"></div>
+            <div class="quiz-question" data-q="3" data-correct="a" data-question="Kali Linux is based on which distribution?" data-a="Debian" data-b="Red Hat" data-c="Arch" data-d="Fedora"></div>
+          </div>
+          <button class="btn-quiz-start" data-action="start-quiz" data-week="1" disabled>Start Quiz (Coming Soon)</button>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           WEEK 2: INFORMATION GATHERING AND OSINT
+      ============================================================ -->
+      <section class="lecture-section" id="week2" data-week="2" aria-labelledby="week2-title">
+        <div class="lecture-header">
+          <div class="lecture-week-badge">Week 02</div>
+          <h2 class="lecture-title" id="week2-title">Information Gathering and OSINT</h2>
+          <p class="lecture-instructor">Instructor: Senior Lecturer, MSc Aliya Abdiraman</p>
+        </div>
+
+        <article class="lecture-subsection" id="week2-overview">
+          <h3 class="subsection-title">A. Lecture Overview</h3>
+          <p class="lecture-overview-text">Reconnaissance is the most critical phase of any penetration test or real-world attack. This lecture covers both passive and active information gathering methodologies. Students learn to leverage Open Source Intelligence (OSINT) — the art of extracting actionable intelligence from publicly available sources — without ever directly touching the target system. Topics include WHOIS lookups, DNS enumeration, Google dorking, social media scraping, certificate transparency, file metadata analysis, and automated OSINT tools.</p>
+        </article>
+
+        <article class="lecture-subsection" id="week2-concepts">
+          <h3 class="subsection-title">B. Core Concepts &amp; Definitions</h3>
+          <div class="concept-grid">
+            <div class="concept-card">
+              <h4 class="concept-card__term">OSINT</h4>
+              <p class="concept-card__definition">Open Source Intelligence — the collection and analysis of information from publicly available sources (websites, social media, public records, DNS, WHOIS, certificate logs, job boards, etc.) without interacting directly with the target's systems.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Passive Reconnaissance</h4>
+              <p class="concept-card__definition">Information gathering that does not interact directly with the target system. Uses third-party databases and public data sources. The target has no way to detect this activity. Examples: WHOIS, Google dorking, Shodan queries, certificate transparency.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Active Reconnaissance</h4>
+              <p class="concept-card__definition">Information gathering that directly interacts with the target's systems — sending probes that may generate logs and trigger alerts. Examples: Nmap scans, banner grabbing, DNS zone transfer attempts, web spidering.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">WHOIS</h4>
+              <p class="concept-card__definition">A protocol and database system that stores domain registration information — registrant name/organization, registrar, creation date, expiration date, name servers, and sometimes technical/admin contact emails. Essential for mapping ownership.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">DNS Enumeration</h4>
+              <p class="concept-card__definition">The process of querying DNS records to discover subdomains, mail servers (MX), name servers (NS), IP addresses (A/AAAA), and text records (TXT). Tools: dig, nslookup, DNSRecon, Gobuster (DNS mode).</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Google Dorking</h4>
+              <p class="concept-card__definition">Using advanced Google search operators to locate sensitive or misconfigured data exposed on the public internet — login pages, exposed files, database dumps, configuration files, and camera feeds. Also known as "Google hacking."</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Certificate Transparency</h4>
+              <p class="concept-card__definition">A public log of all SSL/TLS certificates issued by Certificate Authorities (CAs). Attackers query these logs (via tools like crt.sh) to enumerate subdomains that a target owns — revealing infrastructure not listed in public DNS.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">File Metadata (EXIF)</h4>
+              <p class="concept-card__definition">Exchangeable Image File Format data embedded in images, Office documents, and PDFs — revealing author name, software version, GPS coordinates, creation timestamps, and device information. Extractable with tools like ExifTool.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection" id="week2-notes">
+          <h3 class="subsection-title">C. Expanded Academic Notes</h3>
+
+          <h4 class="subsection-subheading">Passive vs. Active Reconnaissance</h4>
+          <table class="comparison-table" aria-label="Passive vs active reconnaissance comparison">
+            <thead>
+              <tr>
+                <th scope="col">Dimension</th>
+                <th scope="col">Passive Reconnaissance</th>
+                <th scope="col">Active Reconnaissance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Target interaction</td>
+                <td>None (uses 3rd-party sources)</td>
+                <td>Direct probes to target systems</td>
+              </tr>
+              <tr>
+                <td>Detectability</td>
+                <td>Nearly undetectable</td>
+                <td>May trigger IDS/IPS alerts, logs</td>
+              </tr>
+              <tr>
+                <td>Legal risk</td>
+                <td>Very low</td>
+                <td>Higher — may violate terms of service</td>
+              </tr>
+              <tr>
+                <td>Examples</td>
+                <td>WHOIS, Shodan, Google dorking, social media</td>
+                <td>Nmap scan, banner grabbing, DNS zone transfer</td>
+              </tr>
+              <tr>
+                <td>Tools</td>
+                <td>Maltego, theHarvester, SpiderFoot, crt.sh</td>
+                <td>Nmap, Netdiscover, Gobuster</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 class="subsection-subheading">Google Dorking Operators</h4>
+          <table class="comparison-table" aria-label="Google dorking operators reference">
+            <thead>
+              <tr>
+                <th scope="col">Operator</th>
+                <th scope="col">Function</th>
+                <th scope="col">Example</th>
+                <th scope="col">Security Use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>filetype:</code></td><td>Search specific file types</td><td><code>filetype:pdf confidential</code></td><td>Find exposed sensitive documents</td></tr>
+              <tr><td><code>inurl:</code></td><td>Search within URL</td><td><code>inurl:admin login</code></td><td>Find admin panels</td></tr>
+              <tr><td><code>intext:</code></td><td>Search within page content</td><td><code>intext:"password"</code></td><td>Find pages containing credentials</td></tr>
+              <tr><td><code>intitle:</code></td><td>Search within page title</td><td><code>intitle:"index of"</code></td><td>Find open directory listings</td></tr>
+              <tr><td><code>site:</code></td><td>Limit to specific domain</td><td><code>site:example.com filetype:sql</code></td><td>Find database dumps on target</td></tr>
+              <tr><td><code>link:</code></td><td>Pages linking to a URL</td><td><code>link:example.com</code></td><td>Map external relationships</td></tr>
+              <tr><td><code>cache:</code></td><td>Google's cached version</td><td><code>cache:example.com</code></td><td>View removed/updated pages</td></tr>
+              <tr><td><code>ext:</code></td><td>File extension search</td><td><code>ext:log intext:JSESSIONID</code></td><td>Find exposed session logs</td></tr>
+            </tbody>
+          </table>
+
+          <h4 class="subsection-subheading">DNS Record Types Reference</h4>
+          <table class="comparison-table" aria-label="DNS record types">
+            <thead>
+              <tr>
+                <th scope="col">Record Type</th>
+                <th scope="col">Function</th>
+                <th scope="col">Recon Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>A</td><td>Maps hostname to IPv4 address</td><td>Find server IP addresses</td></tr>
+              <tr><td>AAAA</td><td>Maps hostname to IPv6 address</td><td>Discover IPv6 infrastructure</td></tr>
+              <tr><td>MX</td><td>Mail exchanger records</td><td>Identify email providers and servers</td></tr>
+              <tr><td>NS</td><td>Name server records</td><td>Identify DNS infrastructure</td></tr>
+              <tr><td>TXT</td><td>Arbitrary text data</td><td>May expose SPF, DKIM, API keys, config data</td></tr>
+              <tr><td>CNAME</td><td>Canonical name (alias)</td><td>Discover cloud service relationships (e.g., AWS, CDN)</td></tr>
+              <tr><td>SOA</td><td>Start of Authority</td><td>Identify primary DNS server and admin email</td></tr>
+              <tr><td>PTR</td><td>Reverse DNS lookup</td><td>IP to hostname mapping</td></tr>
+            </tbody>
+          </table>
+
+          <h4 class="subsection-subheading">Social Media Scraping for OSINT</h4>
+          <p>Attackers routinely mine LinkedIn, Twitter/X, Facebook, Instagram, and GitHub for intelligence. Key data gathered includes:</p>
+          <ul class="detail-list">
+            <li><strong>Technology stack</strong> — Job postings reveal what technologies a company uses ("3+ years React, AWS, PostgreSQL")</li>
+            <li><strong>Key personnel</strong> — Names, roles, and contact information of executives and IT staff (targets for spear phishing)</li>
+            <li><strong>Organizational structure</strong> — Department hierarchy useful for impersonation attacks</li>
+            <li><strong>Network topology hints</strong> — Engineers posting about "our AWS us-east-1 infrastructure" or "our Kubernetes cluster"</li>
+            <li><strong>Credentials</strong> — Developers accidentally committing API keys, passwords, and SSH private keys to public GitHub repositories</li>
+          </ul>
+
+          <h4 class="subsection-subheading">Subdomain Brute Forcing with Gobuster</h4>
+          <div class="code-block">
+            <code>gobuster dns -d [domain_name] -t 150 -w ./subdomains-top1million-110000.txt</code>
+          </div>
+          <p>Parameters: <code>dns</code> = DNS enumeration mode | <code>-d</code> = target domain | <code>-t 150</code> = 150 concurrent threads | <code>-w</code> = wordlist path</p>
+        </article>
+
+        <!-- D. TOOLS -->
+        <article class="lecture-subsection" id="week2-tools">
+          <h3 class="subsection-title">D. Tools and Platforms</h3>
+          <div class="tool-grid">
+            <div class="tool-card" data-tool="shodan" data-category="osint">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Shodan</h4>
+                <span class="tool-card__badge tool-card__badge--osint">OSINT</span>
+              </div>
+              <p class="tool-card__purpose">Search engine for Internet-connected devices. Indexes servers, webcams, IoT devices, industrial control systems, routers, and more — revealing exposed services and vulnerabilities without touching the target.</p>
+              <dl class="tool-card__meta">
+                <dt>Usage</dt><dd>Passive reconnaissance — finding exposed services at target IP ranges</dd>
+                <dt>Notable feature</dt><dd>Can search by banner, port, country, organization, CVE</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="maltego" data-category="osint">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Maltego</h4>
+                <span class="tool-card__badge tool-card__badge--osint">OSINT</span>
+              </div>
+              <p class="tool-card__purpose">Graphical link analysis tool for mapping relationships between entities — domains, IPs, persons, organizations, email addresses, social media accounts. Creates visual intelligence graphs.</p>
+              <dl class="tool-card__meta">
+                <dt>Usage</dt><dd>Passive recon — mapping organizational and infrastructure relationships</dd>
+                <dt>Special feature</dt><dd>Transform-based architecture queries multiple data sources automatically</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="theharvester" data-category="osint">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">theHarvester</h4>
+                <span class="tool-card__badge tool-card__badge--osint">OSINT</span>
+              </div>
+              <p class="tool-card__purpose">Automated OSINT tool for gathering email addresses, subdomains, virtual hosts, open ports, and banners from multiple public sources (Google, Bing, LinkedIn, Shodan, etc.)</p>
+              <dl class="tool-card__meta">
+                <dt>Usage</dt><dd>Passive recon — email harvesting, subdomain discovery</dd>
+                <dt>Pre-installed</dt><dd>Kali Linux</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="spiderfoot" data-category="osint">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">SpiderFoot</h4>
+                <span class="tool-card__badge tool-card__badge--osint">OSINT</span>
+              </div>
+              <p class="tool-card__purpose">Automated OSINT collection and correlation platform. Aggregates data about domains, IPs, email addresses, usernames, and organizations from 200+ sources.</p>
+              <dl class="tool-card__meta">
+                <dt>Launch</dt><dd><code>python3 sf.py -l 127.0.0.1:5001</code></dd>
+                <dt>Usage</dt><dd>Web UI-based automated intelligence gathering</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="exiftool" data-category="osint">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">ExifTool</h4>
+                <span class="tool-card__badge tool-card__badge--osint">OSINT</span>
+              </div>
+              <p class="tool-card__purpose">Reads, writes, and edits file metadata — Exif, IPTC, XMP, GPS coordinates from images, PDFs, Office documents, and more. Used to extract hidden information from target's public files.</p>
+              <dl class="tool-card__meta">
+                <dt>Usage</dt><dd>Passive recon — extract metadata from target organization's public documents</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="gobuster" data-category="active-recon">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Gobuster</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">Active Recon</span>
+              </div>
+              <p class="tool-card__purpose">Directory/subdomain brute-forcing tool. In DNS mode, discovers subdomains. In dir mode, brute-forces hidden directories and files on web servers using wordlists.</p>
+              <dl class="tool-card__meta">
+                <dt>Usage</dt><dd>Active recon — subdomain and directory enumeration</dd>
+                <dt>Wordlists</dt><dd>SecLists (GitHub: danielmiessler/SecLists)</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="nmap-recon" data-category="active-recon">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Nmap (Recon Mode)</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">Active Recon</span>
+              </div>
+              <p class="tool-card__purpose">Used in active reconnaissance to identify open ports, running services, and software versions. Command: <code>sudo nmap -sV -sS -sC -n -T4 --min-rate 3000 -p- [target]</code></p>
+              <dl class="tool-card__meta">
+                <dt>Usage</dt><dd>Active recon — port scanning, service fingerprinting</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="rocketreach" data-category="osint">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">RocketReach</h4>
+                <span class="tool-card__badge tool-card__badge--osint">OSINT</span>
+              </div>
+              <p class="tool-card__purpose">Aggregates professional information — names, emails, job titles, organizational structure. Used to identify key personnel for targeted social engineering.</p>
+              <dl class="tool-card__meta">
+                <dt>URL</dt><dd>rocketreach.co</dd>
+              </dl>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection must-memorize" id="week2-memorize">
+          <h3 class="subsection-title">&#11088; Must Memorize — Week 2</h3>
+          <div class="memorize-grid">
+            <div class="memorize-card"><strong>OSINT</strong> = Open Source Intelligence from public sources</div>
+            <div class="memorize-card"><strong>Passive Recon</strong> = No direct target contact → undetectable</div>
+            <div class="memorize-card"><strong>Active Recon</strong> = Direct probes → may trigger logs/alerts</div>
+            <div class="memorize-card"><strong>Shodan</strong> = Search engine for internet-connected devices</div>
+            <div class="memorize-card"><strong>Google Dork: filetype:</strong> searches specific file extensions</div>
+            <div class="memorize-card"><strong>WHOIS</strong> reveals domain ownership and registration details</div>
+            <div class="memorize-card"><strong>crt.sh</strong> = Certificate transparency → reveals subdomains</div>
+            <div class="memorize-card"><strong>MX record</strong> = Mail exchanger | <strong>A record</strong> = IPv4 mapping</div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection exam-questions" id="week2-questions">
+          <h3 class="subsection-title">&#10067; Likely Exam Questions — Week 2</h3>
+          <ol class="exam-question-list">
+            <li class="exam-question">
+              <p class="question-text">Q: What is the difference between passive and active reconnaissance? Why does the distinction matter?</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>Passive reconnaissance gathers information without directly interacting with the target — using OSINT sources, WHOIS, Shodan, and certificate logs. It is nearly undetectable. Active reconnaissance directly probes target systems (Nmap scans, DNS zone transfers) and may generate logs and trigger IDS alerts. The distinction matters because passive recon carries minimal legal and detection risk, while active recon, if performed without authorization, may be illegal and can alert defenders to the ongoing assessment.</p>
+              </details>
+            </li>
+            <li class="exam-question">
+              <p class="question-text">Q: What is Google Dorking? Give three examples of dork operators and their security applications.</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>Google Dorking (Google Hacking) uses advanced search operators to find sensitive data exposed on public websites. Examples: (1) <code>filetype:pdf confidential</code> — finds exposed PDF files labeled confidential. (2) <code>intitle:"index of"</code> — finds web servers with directory listing enabled, potentially exposing files. (3) <code>inurl:admin login</code> — finds admin login pages. These techniques reveal misconfigurations and unintentional data exposure without interacting with the target directly.</p>
+              </details>
+            </li>
+          </ol>
+        </article>
+      </section>
+
+      <!-- ============================================================
+           WEEK 3: NETWORK SCANNING AND VULNERABILITY DETECTION
+      ============================================================ -->
+      <section class="lecture-section" id="week3" data-week="3" aria-labelledby="week3-title">
+        <div class="lecture-header">
+          <div class="lecture-week-badge">Week 03</div>
+          <h2 class="lecture-title" id="week3-title">Network Scanning and Vulnerability Detection</h2>
+          <p class="lecture-instructor">Instructor: Senior Lecturer Aliya Abdiraman</p>
+        </div>
+
+        <article class="lecture-subsection" id="week3-overview">
+          <h3 class="subsection-title">A. Lecture Overview</h3>
+          <p class="lecture-overview-text">Network scanning transitions reconnaissance from passive information gathering to active probing of target infrastructure. This lecture provides a deep technical grounding in network scanning concepts, port discovery, service fingerprinting, OS detection, and vulnerability scanning. Students master Nmap — the industry standard — as well as Zenmap (GUI) and Masscan (ultra-fast internet scanner). The lecture also covers IDS/IPS evasion techniques used to bypass security controls during assessments.</p>
+        </article>
+
+        <article class="lecture-subsection" id="week3-concepts">
+          <h3 class="subsection-title">B. Core Concepts &amp; Definitions</h3>
+          <div class="concept-grid">
+            <div class="concept-card">
+              <h4 class="concept-card__term">Network Scanning</h4>
+              <p class="concept-card__definition">The active process of discovering live hosts, open ports, running services, and potential vulnerabilities across a network. Used in both security assessments and network management. Leaves traces in target logs.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Port</h4>
+              <p class="concept-card__definition">A logical endpoint for network communication, numbered 0–65535. Well-known ports (0–1023) include 22 (SSH), 80 (HTTP), 443 (HTTPS), 21 (FTP), 25 (SMTP), 53 (DNS), 3306 (MySQL). Open ports indicate running services — and potential attack surfaces.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">TCP SYN Scan (Half-Open)</h4>
+              <p class="concept-card__definition">Nmap's default stealth scan (-sS). Sends a SYN packet; if the target responds with SYN-ACK (port open), Nmap sends RST instead of ACK — never completing the handshake. Faster than full TCP and often not logged by applications.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">TCP 3-Way Handshake</h4>
+              <p class="concept-card__definition">The connection establishment protocol: (1) SYN — client requests connection, (2) SYN-ACK — server acknowledges, (3) ACK — client confirms. Full open scans (-sT) complete this handshake and are more detectable.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Banner Grabbing</h4>
+              <p class="concept-card__definition">The technique of reading the service banner returned when connecting to an open port — revealing the software name, version, and sometimes OS. Enables targeted vulnerability lookup against known CVEs for that version.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">NSE (Nmap Scripting Engine)</h4>
+              <p class="concept-card__definition">Lua-based scripting framework built into Nmap. Provides hundreds of scripts for vulnerability detection, authentication testing, brute-forcing, service enumeration, and exploitation. Key categories: auth, vuln, brute, exploit, fuzzer, broadcast.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">IDS (Intrusion Detection System)</h4>
+              <p class="concept-card__definition">A security system that monitors network traffic or host activity for suspicious patterns and generates alerts. A passive system — it detects but does not block. Types: NIDS (network-based) and HIDS (host-based).</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">IPS (Intrusion Prevention System)</h4>
+              <p class="concept-card__definition">An active security system that monitors traffic AND can take automated action — blocking connections, dropping packets, or resetting sessions — when attack patterns are detected. IPS = IDS + active response.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection" id="week3-notes">
+          <h3 class="subsection-title">C. Expanded Academic Notes</h3>
+
+          <h4 class="subsection-subheading">Nmap Command Reference</h4>
+          <table class="comparison-table" aria-label="Nmap command reference">
+            <thead>
+              <tr>
+                <th scope="col">Command</th>
+                <th scope="col">Function</th>
+                <th scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>nmap 192.168.1.1</code></td><td>Basic single target scan</td><td>Default port range (1000 most common ports)</td></tr>
+              <tr><td><code>nmap 192.168.1.1-100</code></td><td>Range scan</td><td>Scans all IPs from .1 to .100</td></tr>
+              <tr><td><code>nmap 192.168.1.0/24</code></td><td>Subnet scan</td><td>All 256 addresses in subnet</td></tr>
+              <tr><td><code>nmap -sn 192.168.1.0/24</code></td><td>Host discovery (ping scan)</td><td>No port scanning — just live host detection</td></tr>
+              <tr><td><code>nmap -p 22,80,443 192.168.1.1</code></td><td>Specific ports</td><td>Check only listed ports</td></tr>
+              <tr><td><code>nmap -p- 192.168.1.1</code></td><td>All 65535 ports</td><td>Slow but comprehensive</td></tr>
+              <tr><td><code>nmap -O 192.168.1.1</code></td><td>OS detection</td><td>Guess the target's operating system</td></tr>
+              <tr><td><code>nmap -sV 192.168.1.1</code></td><td>Version detection</td><td>Fingerprint service versions via banners</td></tr>
+              <tr><td><code>nmap -A 192.168.1.1</code></td><td>Aggressive scan</td><td>OS + version + scripts + traceroute</td></tr>
+              <tr><td><code>nmap -Pn 192.168.1.1</code></td><td>Skip ping</td><td>Scan even if host doesn't respond to ICMP</td></tr>
+              <tr><td><code>nmap -sS 192.168.1.1</code></td><td>SYN (stealth) scan</td><td>Half-open scan, often not logged</td></tr>
+              <tr><td><code>nmap -sU -p 53,161 192.168.1.1</code></td><td>UDP scan</td><td>Scan UDP ports (DNS=53, SNMP=161)</td></tr>
+              <tr><td><code>nmap -sC 192.168.1.1</code></td><td>Default NSE scripts</td><td>Run default information-gathering scripts</td></tr>
+              <tr><td><code>nmap --script=vuln 192.168.1.1</code></td><td>Vulnerability scan</td><td>CVE-based vulnerability detection</td></tr>
+              <tr><td><code>nmap -oN results.txt 192.168.1.1</code></td><td>Save normal output</td><td>Human-readable text file</td></tr>
+              <tr><td><code>nmap -oX results.xml 192.168.1.1</code></td><td>Save XML output</td><td>Machine-parseable, import into tools</td></tr>
+              <tr><td><code>nmap -T4 192.168.1.1</code></td><td>Timing template</td><td>T0=slow stealth, T5=insane speed</td></tr>
+            </tbody>
+          </table>
+
+          <h4 class="subsection-subheading">IDS/IPS Evasion Techniques</h4>
+          <div class="attack-card">
+            <table class="comparison-table" aria-label="IDS IPS evasion techniques">
+              <thead>
+                <tr>
+                  <th scope="col">Technique</th>
+                  <th scope="col">Nmap Flag</th>
+                  <th scope="col">How It Evades Detection</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Decoy Scanning</td><td><code>-D RND:10</code></td><td>Generates 10 random fake source IPs, making the real attacker's IP hard to identify</td></tr>
+                <tr><td>Packet Fragmentation</td><td><code>-f</code></td><td>Splits packets into tiny fragments that some IDS cannot reassemble for analysis</td></tr>
+                <tr><td>Source IP Spoofing</td><td><code>-S [IP]</code></td><td>Tricks target into logging a different IP as the scanner</td></tr>
+                <tr><td>Source Port Spoofing</td><td><code>--source-port 53</code></td><td>Makes scan appear to originate from DNS port — often whitelisted by firewalls</td></tr>
+                <tr><td>Idle (Zombie) Scan</td><td><code>-sI [zombie]</code></td><td>Routes scan through a third "zombie" host — target logs zombie's IP, not attacker's</td></tr>
+                <tr><td>Bad Checksum</td><td><code>--badsum</code></td><td>Tests if firewall responds to malformed packets — real systems should drop them</td></tr>
+                <tr><td>IPv6</td><td><code>-6</code></td><td>Uses IPv6 — many firewall rules only cover IPv4</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4 class="subsection-subheading">TCP vs. UDP Comparison</h4>
+          <div class="attack-defense-grid">
+            <div class="attack-card">
+              <h5>TCP (Transmission Control Protocol)</h5>
+              <ul>
+                <li>Connection-oriented — requires 3-way handshake</li>
+                <li>Reliable — guarantees packet delivery and ordering</li>
+                <li>Slower due to acknowledgment overhead</li>
+                <li>Used by: HTTP, HTTPS, SSH, FTP, SMTP</li>
+                <li>Scannable — SYN responses indicate open ports clearly</li>
+              </ul>
+            </div>
+            <div class="defense-card">
+              <h5>UDP (User Datagram Protocol)</h5>
+              <ul>
+                <li>Connectionless — no handshake required</li>
+                <li>Unreliable — no delivery guarantee</li>
+                <li>Faster — minimal overhead</li>
+                <li>Used by: DNS (53), SNMP (161), DHCP (67/68), VoIP</li>
+                <li>Harder to scan — no response often means open OR filtered</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection" id="week3-tools">
+          <h3 class="subsection-title">D. Tools and Platforms</h3>
+          <div class="tool-grid">
+            <div class="tool-card" data-tool="nmap" data-category="scanning">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Nmap (Network Mapper)</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">Scanning</span>
+              </div>
+              <p class="tool-card__purpose">Industry-standard network discovery and security auditing tool. Identifies live hosts, open ports, services, software versions, and operating systems. Includes NSE scripting engine for vulnerability detection.</p>
+              <dl class="tool-card__meta">
+                <dt>URL</dt><dd>nmap.org</dd>
+                <dt>Usage</dt><dd>Active recon, vulnerability assessment</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="zenmap" data-category="scanning">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Zenmap</h4>
+                <span class="tool-card__badge tool-card__badge--neutral">GUI</span>
+              </div>
+              <p class="tool-card__purpose">Official GUI front-end for Nmap. Provides visual network topology maps, scan comparison, predefined profiles, and results saved across sessions. Ideal for learning and visual reporting.</p>
+              <dl class="tool-card__meta">
+                <dt>Usage</dt><dd>Nmap GUI for beginners and visualization</dd>
+                <dt>Features</dt><dd>Topology maps, scan profiles, result comparison</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="masscan" data-category="scanning">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Masscan</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">Ultra-Fast Scan</span>
+              </div>
+              <p class="tool-card__purpose">Fastest internet port scanner — can scan the entire IPv4 internet space in minutes. Uses asynchronous, stateless scanning with raw sockets. Nmap-compatible syntax.</p>
+              <dl class="tool-card__meta">
+                <dt>Speed</dt><dd>Millions of packets per second</dd>
+                <dt>Caution</dt><dd>Can overwhelm networks — always use rate limiting</dd>
+              </dl>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection must-memorize" id="week3-memorize">
+          <h3 class="subsection-title">&#11088; Must Memorize — Week 3</h3>
+          <div class="memorize-grid">
+            <div class="memorize-card"><strong>-sS</strong> = SYN stealth scan (half-open, default)</div>
+            <div class="memorize-card"><strong>-sV</strong> = version/banner detection</div>
+            <div class="memorize-card"><strong>-O</strong> = OS detection</div>
+            <div class="memorize-card"><strong>-A</strong> = aggressive (OS+version+scripts+traceroute)</div>
+            <div class="memorize-card"><strong>-p-</strong> = scan all 65535 ports</div>
+            <div class="memorize-card"><strong>-Pn</strong> = skip ping (treat host as online)</div>
+            <div class="memorize-card"><strong>IDS</strong> = detects only | <strong>IPS</strong> = detects + blocks</div>
+            <div class="memorize-card"><strong>TCP</strong> = reliable, connection-oriented | <strong>UDP</strong> = fast, connectionless</div>
+            <div class="memorize-card">Port 22=SSH | 80=HTTP | 443=HTTPS | 53=DNS | 3306=MySQL</div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection exam-questions" id="week3-questions">
+          <h3 class="subsection-title">&#10067; Likely Exam Questions — Week 3</h3>
+          <ol class="exam-question-list">
+            <li class="exam-question">
+              <p class="question-text">Q: Explain how a TCP SYN scan works and why it is considered "stealthy."</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>A TCP SYN scan (Nmap -sS) works by sending a SYN packet to the target port. If the port is open, the target responds with SYN-ACK. Instead of completing the 3-way handshake with an ACK, Nmap immediately sends a RST (reset) to tear down the half-open connection. This is considered stealthy because many applications only log fully established TCP connections — a connection that never completes the handshake may not be recorded in application logs, though network-level IDS can still detect the pattern.</p>
+              </details>
+            </li>
+            <li class="exam-question">
+              <p class="question-text">Q: What is the difference between an IDS and an IPS?</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>An IDS (Intrusion Detection System) is a passive system that monitors traffic and generates alerts when suspicious patterns are detected — it does not take action to stop traffic. An IPS (Intrusion Prevention System) is an active system that monitors traffic AND takes automated responses — dropping malicious packets, blocking source IPs, or resetting connections. IPS is positioned inline with traffic flow; IDS can operate out-of-band by analyzing a copy of traffic.</p>
+              </details>
+            </li>
+          </ol>
+        </article>
+      </section>
+
+      <!-- ============================================================
+           WEEK 4: NETWORK HACKING AND WPA/WPA2
+      ============================================================ -->
+      <section class="lecture-section" id="week4" data-week="4" aria-labelledby="week4-title">
+        <div class="lecture-header">
+          <div class="lecture-week-badge">Week 04</div>
+          <h2 class="lecture-title" id="week4-title">Network Hacking and WPA/WPA2 Security</h2>
+          <p class="lecture-instructor">Instructor: Senior Lecturer Balziya Aldosh, School of Cybersecurity</p>
+        </div>
+
+        <article class="lecture-subsection" id="week4-overview">
+          <h3 class="subsection-title">A. Lecture Overview</h3>
+          <p class="lecture-overview-text">Wireless networks represent a fundamentally different attack surface from wired infrastructure — they broadcast data through open air, accessible to any device within radio range. This lecture covers Wi-Fi security protocols from the now-broken WEP standard through WPA2 and the modern WPA3, analyzing the cryptographic weaknesses that make each protocol more or less resistant to attack. Students learn the Aircrack-ng toolkit for wireless auditing: capturing traffic with airodump-ng, executing deauthentication attacks with aireplay-ng, and cracking WEP/WPA2 credentials with aircrack-ng.</p>
+        </article>
+
+        <article class="lecture-subsection" id="week4-concepts">
+          <h3 class="subsection-title">B. Core Concepts &amp; Definitions</h3>
+
+          <div class="attack-defense-grid">
+            <div class="attack-card">
+              <h4 class="card-heading card-heading--neutral">Wi-Fi Security Protocol Comparison</h4>
+              <table class="comparison-table" aria-label="WiFi security protocols comparison">
+                <thead>
+                  <tr>
+                    <th scope="col">Protocol</th>
+                    <th scope="col">Encryption</th>
+                    <th scope="col">Security Level</th>
+                    <th scope="col">Crack Method</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>OPN</strong></td>
+                    <td>None</td>
+                    <td class="status--critical">None</td>
+                    <td>All traffic visible in plaintext — passive sniffing captures credentials</td>
+                  </tr>
+                  <tr>
+                    <td><strong>WEP</strong></td>
+                    <td>RC4 (weak IVs)</td>
+                    <td class="status--critical">Broken</td>
+                    <td>Statistical IV analysis — aircrack-ng cracks with ~60,000+ IVs (minutes)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>WPA</strong></td>
+                    <td>TKIP</td>
+                    <td class="status--warning">Deprecated</td>
+                    <td>Dictionary/brute-force against captured 4-way handshake</td>
+                  </tr>
+                  <tr>
+                    <td><strong>WPA2</strong></td>
+                    <td>AES-CCMP</td>
+                    <td class="status--moderate">Strong (if long passphrase)</td>
+                    <td>Dictionary/brute-force against 4-way handshake — rockyou.txt etc.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>WPA3</strong></td>
+                    <td>AES-GCMP-256 + SAE</td>
+                    <td class="status--good">Very Strong</td>
+                    <td>Dragonblood vulnerabilities (niche); SAE blocks offline dictionary attacks</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="concept-grid">
+            <div class="concept-card">
+              <h4 class="concept-card__term">Monitor Mode</h4>
+              <p class="concept-card__definition">A wireless adapter operating mode that allows passive capture of ALL wireless frames in range — not just frames addressed to the adapter. Required for Wi-Fi packet capture. Enabled with: <code>airmon-ng start wlan0</code></p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">4-Way Handshake</h4>
+              <p class="concept-card__definition">The WPA/WPA2 authentication exchange between a client and access point — establishing the PTK (Pairwise Transient Key) used to encrypt data. This handshake contains cryptographic material that can be attacked offline to recover the passphrase if captured.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Deauthentication Attack</h4>
+              <p class="concept-card__definition">Sending forged 802.11 deauthentication frames to a connected client, forcing it to disconnect from the access point. When the client reconnects, the 4-way handshake can be captured. Tool: <code>aireplay-ng -0 20 -a [BSSID] wlan0mon</code></p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Initialization Vector (IV)</h4>
+              <p class="concept-card__definition">A random value used with WEP encryption to vary the keystream. WEP's fatal weakness: the IV space is only 24 bits (16.7 million values), and reused IVs allow statistical reconstruction of the encryption key. WPA/WPA2 fixed this with TKIP/CCMP.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">SAE (Simultaneous Authentication of Equals)</h4>
+              <p class="concept-card__definition">WPA3's "Dragonfly handshake" — replaces the pre-shared key (PSK) model of WPA2. SAE prevents offline dictionary attacks because each authentication attempt requires active interaction with the access point, making brute-force impractical at scale.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">BSSID / ESSID</h4>
+              <p class="concept-card__definition">BSSID (Basic Service Set Identifier) = the MAC address of the access point. ESSID (Extended SSID) = the human-readable Wi-Fi network name. Required parameters when targeting a specific access point during wireless assessment.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection" id="week4-notes">
+          <h3 class="subsection-title">C. Expanded Academic Notes — Aircrack-ng Attack Workflow</h3>
+
+          <ol class="pentest-stages-list">
+            <li class="stage-item">
+              <div class="stage-number">01</div>
+              <div class="stage-content">
+                <h5 class="stage-title">Enable Monitor Mode</h5>
+                <div class="code-block"><code>airmon-ng check kill<br>airmon-ng start wlan0</code></div>
+                <p>Creates wlan0mon interface in monitor mode. Kill conflicting processes first.</p>
+              </div>
+            </li>
+            <li class="stage-item">
+              <div class="stage-number">02</div>
+              <div class="stage-content">
+                <h5 class="stage-title">Discover Networks</h5>
+                <div class="code-block"><code>airodump-ng wlan0mon</code></div>
+                <p>Lists nearby access points: BSSID, channel, encryption type, ESSID, signal strength (PWR), connected clients.</p>
+              </div>
+            </li>
+            <li class="stage-item">
+              <div class="stage-number">03</div>
+              <div class="stage-content">
+                <h5 class="stage-title">Capture Target Traffic</h5>
+                <div class="code-block"><code>airodump-ng -c [channel] --bssid [BSSID] -w capture wlan0mon</code></div>
+                <p>Focused capture on specific target. Saves to capture-01.cap file.</p>
+              </div>
+            </li>
+            <li class="stage-item">
+              <div class="stage-number">04</div>
+              <div class="stage-content">
+                <h5 class="stage-title">Deauthentication Attack (WPA2)</h5>
+                <div class="code-block"><code>aireplay-ng -0 20 -a [BSSID] wlan0mon</code></div>
+                <p>Sends 20 deauth frames to all clients. Forces reconnection → captures 4-way handshake.</p>
+              </div>
+            </li>
+            <li class="stage-item">
+              <div class="stage-number">05</div>
+              <div class="stage-content">
+                <h5 class="stage-title">Crack the Handshake</h5>
+                <div class="code-block"><code>aircrack-ng -w /root/rockyou-top100000.txt -b [BSSID] capture-01.cap</code></div>
+                <p>Dictionary attack against captured handshake. Success: KEY FOUND! [password]</p>
+              </div>
+            </li>
+          </ol>
+
+          <h4 class="subsection-subheading">OPN Network Attack — Credential Capture via Wireshark</h4>
+          <p>Open (OPN) networks transmit all data in plaintext. Using Wireshark with filter <code>http.request.method == "POST"</code> reveals login credentials submitted over HTTP. Cookie headers containing PHPSESSID session tokens are also visible and can be reused to hijack authenticated sessions — this is called session hijacking.</p>
+        </article>
+
+        <article class="lecture-subsection" id="week4-tools">
+          <h3 class="subsection-title">D. Tools and Platforms</h3>
+          <div class="tool-grid">
+            <div class="tool-card" data-tool="aircrack-ng" data-category="wireless">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Aircrack-ng Suite</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">Wireless</span>
+              </div>
+              <p class="tool-card__purpose">Complete 802.11 WEP/WPA/WPA2 security auditing suite: airmon-ng (monitor mode), airodump-ng (capture), aireplay-ng (injection/deauth), aircrack-ng (cracking)</p>
+            </div>
+            <div class="tool-card" data-tool="wireshark" data-category="analysis">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Wireshark</h4>
+                <span class="tool-card__badge tool-card__badge--neutral">Packet Analysis</span>
+              </div>
+              <p class="tool-card__purpose">Industry-standard network packet analyzer. Captures and dissects network traffic in real time. Essential for analyzing OPN network traffic and understanding protocol behavior.</p>
+            </div>
+            <div class="tool-card" data-tool="hashcat" data-category="cracking">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Hashcat</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">Password Cracking</span>
+              </div>
+              <p class="tool-card__purpose">GPU-accelerated password recovery tool. For WPA2, cracks captured handshakes orders of magnitude faster than CPU-based tools. Supports dictionary, rule-based, brute-force, and combinator attacks.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection must-memorize" id="week4-memorize">
+          <h3 class="subsection-title">&#11088; Must Memorize — Week 4</h3>
+          <div class="memorize-grid">
+            <div class="memorize-card"><strong>OPN</strong> = No encryption → all data in plaintext</div>
+            <div class="memorize-card"><strong>WEP</strong> = RC4 + weak IVs → cracked in minutes</div>
+            <div class="memorize-card"><strong>WPA2</strong> = AES-CCMP → requires handshake capture + dictionary attack</div>
+            <div class="memorize-card"><strong>WPA3</strong> = SAE → blocks offline dictionary attacks</div>
+            <div class="memorize-card"><strong>airmon-ng</strong> = enable monitor mode</div>
+            <div class="memorize-card"><strong>airodump-ng</strong> = capture packets</div>
+            <div class="memorize-card"><strong>aireplay-ng -0</strong> = deauthentication attack</div>
+            <div class="memorize-card"><strong>aircrack-ng</strong> = crack WEP/WPA/WPA2 handshake</div>
+            <div class="memorize-card">WEP needs ~60,000 IVs for successful crack</div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection exam-questions" id="week4-questions">
+          <h3 class="subsection-title">&#10067; Likely Exam Questions — Week 4</h3>
+          <ol class="exam-question-list">
+            <li class="exam-question">
+              <p class="question-text">Q: Why is WEP considered completely broken despite using encryption?</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>WEP is broken because of fundamental flaws in how it uses RC4 encryption with Initialization Vectors (IVs). The IV is only 24 bits, meaning only ~16.7 million unique values exist — in a busy network, IVs repeat quickly. Repeated IVs produce the same keystream, which allows statistical analysis to recover the encryption key. Using tools like aircrack-ng, with approximately 60,000 captured IVs, the key can be recovered in minutes regardless of its length.</p>
+              </details>
+            </li>
+            <li class="exam-question">
+              <p class="question-text">Q: What is a deauthentication attack and why is it used in WPA2 cracking?</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>A deauthentication attack involves sending forged 802.11 deauthentication management frames to force connected clients off an access point. When the client reconnects, it must perform the WPA2 4-way handshake with the access point. An attacker capturing this handshake can then perform an offline dictionary or brute-force attack against the cryptographic material to try to recover the passphrase — without needing to be authenticated to the network.</p>
+              </details>
+            </li>
+          </ol>
+        </article>
+      </section>
+
+      <!-- ============================================================
+           WEEK 5: SOCIAL ENGINEERING
+      ============================================================ -->
+      <section class="lecture-section" id="week5" data-week="5" aria-labelledby="week5-title">
+        <div class="lecture-header">
+          <div class="lecture-week-badge">Week 05</div>
+          <h2 class="lecture-title" id="week5-title">Social Engineering Techniques</h2>
+          <p class="lecture-instructor">Instructor: Senior Lecturer Aliya Abdiraman</p>
+        </div>
+
+        <article class="lecture-subsection" id="week5-overview">
+          <h3 class="subsection-title">A. Lecture Overview</h3>
+          <p class="lecture-overview-text">Social engineering is the art of manipulating people into revealing confidential information or performing actions that compromise security — bypassing technical controls by targeting the human element. This lecture explores the psychological principles underpinning social engineering attacks, the taxonomy of attack types (phishing, spear phishing, whaling, vishing, smishing, pretexting, tailgating), and the tools attackers use. A critical component is the defensive perspective: building organizational security awareness cultures that resist social manipulation.</p>
+        </article>
+
+        <article class="lecture-subsection" id="week5-concepts">
+          <h3 class="subsection-title">B. Core Concepts &amp; Definitions</h3>
+          <div class="concept-grid">
+            <div class="concept-card">
+              <h4 class="concept-card__term">Social Engineering</h4>
+              <p class="concept-card__definition">Psychological manipulation of individuals into performing actions or divulging information that benefits an attacker. Exploits human cognitive biases — trust, fear, urgency, authority — rather than technical vulnerabilities.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Pretexting</h4>
+              <p class="concept-card__definition">Creating a fabricated scenario (pretext) to deceive a target into providing information or access. Example: impersonating IT support ("I'm from the helpdesk — I need your password to fix your account") or a vendor auditor.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Phishing</h4>
+              <p class="concept-card__definition">Mass-distributed fraudulent communications (usually email) impersonating trusted entities to harvest credentials or deliver malware. Success rate is statistical — even a 1% click rate on 10,000 emails is 100 compromised targets.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Spear Phishing</h4>
+              <p class="concept-card__definition">Targeted phishing crafted using personal intelligence about the victim — name, employer, role, colleagues, recent activities. Far more convincing and effective than generic phishing. Used in APT campaigns.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Whaling</h4>
+              <p class="concept-card__definition">Spear phishing targeting high-value individuals — CEOs, CFOs, board members. Often used for Business Email Compromise (BEC) — fraudulently authorizing large financial transfers.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Vishing</h4>
+              <p class="concept-card__definition">Voice phishing — using phone calls to manipulate targets. Attackers spoof caller IDs to impersonate banks, IT support, government agencies. Tools like SpoofApp, SpoofCard, or Asterisk VoIP make caller ID falsification trivial.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Tailgating / Piggybacking</h4>
+              <p class="concept-card__definition">Physical social engineering — following an authorized person through a secured door without using credentials. Relies on social norms of politeness (holding doors open). Countered by mantraps and security awareness training.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">BadPDF Attack</h4>
+              <p class="concept-card__definition">A social engineering technique where a maliciously crafted PDF is sent to a target. The PDF contains embedded code or forces an external resource request that can capture the target's credentials (NTLMv2 hash) or install malware when opened.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection" id="week5-notes">
+          <h3 class="subsection-title">C. Expanded Academic Notes — Methods of Influence</h3>
+          <p>Robert Cialdini's principles of influence are the psychological toolkit of social engineers. Understanding them is essential for both mounting and defending against social engineering attacks.</p>
+          <div class="concept-grid">
+            <div class="concept-card concept-card--warning">
+              <h4 class="concept-card__term">&#128081; Authority</h4>
+              <p class="concept-card__definition">Targets comply with perceived authority figures — impersonating executives, IT administrators, law enforcement, or regulatory bodies. "I'm from corporate IT — I need your login to apply a security patch."</p>
+            </div>
+            <div class="concept-card concept-card--warning">
+              <h4 class="concept-card__term">&#9200; Urgency / Scarcity</h4>
+              <p class="concept-card__definition">Creating artificial time pressure eliminates careful deliberation. "Your account will be locked in 10 minutes — verify your credentials now." Urgency overrides rational evaluation of suspicious requests.</p>
+            </div>
+            <div class="concept-card concept-card--warning">
+              <h4 class="concept-card__term">&#128101; Social Proof</h4>
+              <p class="concept-card__definition">Exploiting the tendency to follow the crowd. "Everyone else in your department has already updated their password through this link." Effective in unfamiliar or confusing situations where targets look to others for behavioral cues.</p>
+            </div>
+            <div class="concept-card concept-card--warning">
+              <h4 class="concept-card__term">&#128151; Likeness</h4>
+              <p class="concept-card__definition">Targets are more likely to comply with people they like or relate to. Attackers research targets' interests, hobbies, and contacts — then impersonate or reference shared connections.</p>
+            </div>
+            <div class="concept-card concept-card--warning">
+              <h4 class="concept-card__term">&#128561; Fear</h4>
+              <p class="concept-card__definition">Fear-based manipulation creates panic that bypasses rational decision-making. "Your computer has been infected with a virus — call this number immediately." Used in tech support scams and ransomware social engineering.</p>
+            </div>
+          </div>
+
+          <h4 class="subsection-subheading">Famous Social Engineering Incidents</h4>
+          <div class="real-world-grid">
+            <div class="real-world-card">
+              <h5>Twitter Bitcoin Hack (2020)</h5>
+              <p>Attackers social-engineered Twitter employees into providing access to internal admin tools by impersonating IT support. Result: 130 high-profile accounts (Obama, Gates, Musk, Apple) hijacked for a Bitcoin scam netting ~$120,000 within hours.</p>
+            </div>
+            <div class="real-world-card">
+              <h5>RSA SecurID Breach (2011)</h5>
+              <p>A targeted spear phishing email with an Excel spreadsheet titled "2011 Recruitment Plan.xls" compromised RSA employees — eventually leading to theft of seed values for millions of SecurID tokens used by defense contractors.</p>
+            </div>
+            <div class="real-world-card">
+              <h5>Kevin Mitnick — The Art of Deception</h5>
+              <p>The most prolific social engineer in history. Mitnick compromised major corporations primarily through phone-based pretexting — impersonating employees, IT support, and vendors to extract passwords and access credentials without any technical hacking.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection" id="week5-tools">
+          <h3 class="subsection-title">D. Tools and Platforms</h3>
+          <div class="tool-grid">
+            <div class="tool-card" data-tool="maltego" data-category="osint">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Maltego</h4>
+                <span class="tool-card__badge tool-card__badge--osint">OSINT / Social Eng.</span>
+              </div>
+              <p class="tool-card__purpose">Used for gathering and visualizing personal data for social engineering preparation — mapping relationships between targets, their contacts, employers, email addresses, and social media profiles.</p>
+            </div>
+            <div class="tool-card" data-tool="beef" data-category="exploitation">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">BeEF (Browser Exploitation Framework)</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">Client-Side</span>
+              </div>
+              <p class="tool-card__purpose">Hooks victim browsers via XSS vulnerabilities — enabling remote command execution in the browser context, cookie theft, fake notification delivery, and social engineering campaigns through the victim's own browser.</p>
+            </div>
+            <div class="tool-card" data-tool="spoofcard" data-category="vishing">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">SpoofCard / SpoofApp</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">Vishing</span>
+              </div>
+              <p class="tool-card__purpose">iOS/Android apps for caller ID spoofing — change displayed number, alter voice, record calls, generate background noise. Used to make vishing calls appear to come from legitimate phone numbers.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection must-memorize" id="week5-memorize">
+          <h3 class="subsection-title">&#11088; Must Memorize — Week 5</h3>
+          <div class="memorize-grid">
+            <div class="memorize-card"><strong>Phishing</strong> = mass email attacks</div>
+            <div class="memorize-card"><strong>Spear Phishing</strong> = targeted, personalized phishing</div>
+            <div class="memorize-card"><strong>Whaling</strong> = targeting executives/C-suite</div>
+            <div class="memorize-card"><strong>Vishing</strong> = phone-based social engineering</div>
+            <div class="memorize-card"><strong>Pretexting</strong> = fabricated scenario/impersonation</div>
+            <div class="memorize-card"><strong>Tailgating</strong> = physical access via following authorized person</div>
+            <div class="memorize-card">5 Methods of Influence: Authority, Urgency, Social Proof, Likeness, Fear</div>
+            <div class="memorize-card"><strong>BeEF</strong> hooks browsers via XSS for browser-based attacks</div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection exam-questions" id="week5-questions">
+          <h3 class="subsection-title">&#10067; Likely Exam Questions — Week 5</h3>
+          <ol class="exam-question-list">
+            <li class="exam-question">
+              <p class="question-text">Q: What are the five methods of influence used in social engineering? Briefly explain each.</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p><strong>Authority</strong> — targets comply with perceived authority figures (impersonating executives, IT, law enforcement). <strong>Urgency/Scarcity</strong> — artificial time pressure prevents careful evaluation ("act now or your account is locked"). <strong>Social Proof</strong> — exploiting the tendency to follow others in unfamiliar situations. <strong>Likeness</strong> — people comply more readily with those they like or identify with. <strong>Fear</strong> — triggering fear bypasses rational decision-making and creates panic-driven compliance.</p>
+              </details>
+            </li>
+            <li class="exam-question">
+              <p class="question-text">Q: What is the difference between phishing, spear phishing, and whaling?</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p><strong>Phishing</strong> is mass, untargeted fraudulent emails sent to large numbers of recipients hoping some percentage will respond. <strong>Spear phishing</strong> is a highly targeted version using personalized information (victim's name, employer, colleagues, recent activities) to craft a convincing message for a specific individual. <strong>Whaling</strong> is spear phishing specifically targeting high-value individuals such as executives (CEO, CFO) — often used to authorize fraudulent financial transfers (Business Email Compromise).</p>
+              </details>
+            </li>
+          </ol>
+        </article>
+      </section>
+
+      <!-- ============================================================
+           WEEK 6: WEB APPLICATION SECURITY
+      ============================================================ -->
+      <section class="lecture-section" id="week6" data-week="6" aria-labelledby="week6-title">
+        <div class="lecture-header">
+          <div class="lecture-week-badge">Week 06</div>
+          <h2 class="lecture-title" id="week6-title">Web Application Security</h2>
+          <p class="lecture-instructor">Instructor: Assistant Professor, PhD Akzhibek Amirova</p>
+        </div>
+
+        <article class="lecture-subsection" id="week6-overview">
+          <h3 class="subsection-title">A. Lecture Overview</h3>
+          <p class="lecture-overview-text">Web applications are the dominant attack surface in modern enterprise environments. This lecture provides a structured introduction to web application security — from foundational security models (CIA Triad, CVSS, OWASP Top 10) through a taxonomy of common vulnerability classes. Students learn to use Burp Suite as an intercepting proxy and explore both server-side vulnerabilities (SQL injection, command injection, LFI, SSRF, path traversal) and client-side vulnerabilities (XSS, CSRF, session fixation). Practical labs use DVWA (Damn Vulnerable Web Application) and WebGoat.</p>
+        </article>
+
+        <article class="lecture-subsection" id="week6-concepts">
+          <h3 class="subsection-title">B. Core Concepts &amp; Definitions</h3>
+
+          <h4 class="subsection-subheading">The CIA Triad</h4>
+          <div class="attack-defense-grid">
+            <div class="defense-card">
+              <h5>&#128274; Confidentiality</h5>
+              <p>Information is not disclosed to unauthorized individuals, entities, or processes. Breached by: data exfiltration, SQL injection, path traversal, credential theft.</p>
+            </div>
+            <div class="defense-card">
+              <h5>&#9989; Integrity</h5>
+              <p>Data maintains accuracy and completeness throughout its lifecycle. Breached by: unauthorized database modifications, parameter tampering, man-in-the-middle attacks.</p>
+            </div>
+            <div class="defense-card">
+              <h5>&#128200; Availability</h5>
+              <p>Systems and data are accessible to authorized entities on demand. Breached by: DDoS attacks, ransomware, resource exhaustion vulnerabilities.</p>
+            </div>
+          </div>
+
+          <div class="concept-grid">
+            <div class="concept-card">
+              <h4 class="concept-card__term">OWASP Top 10</h4>
+              <p class="concept-card__definition">The Open Web Application Security Project's authoritative list of the ten most critical web application security risks — updated periodically based on data from thousands of real-world assessments. The definitive baseline for web security testing.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">CVSS</h4>
+              <p class="concept-card__definition">Common Vulnerability Scoring System — provides a standardized numerical score (0–10) reflecting vulnerability severity based on attack vector, complexity, privileges required, user interaction, and impact on CIA. Calculator at first.org/cvss.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Command Injection</h4>
+              <p class="concept-card__definition">A vulnerability where attacker-controlled input is passed to OS shell commands without sanitization — allowing arbitrary system command execution on the server. Example: <code>system("ping -c 1 " + ip)</code> — if ip is <code>127.0.0.1;id</code>, the <code>id</code> command also executes.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Path Traversal</h4>
+              <p class="concept-card__definition">A vulnerability where an attacker manipulates file path parameters to access files outside the intended directory. Classic payload: <code>../../../../../etc/passwd</code>. Can expose sensitive system files, configuration files, and credentials.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">XSS (Cross-Site Scripting)</h4>
+              <p class="concept-card__definition">A vulnerability where attacker-controlled HTML/JavaScript is injected into web pages and rendered in victims' browsers — enabling cookie theft, session hijacking, keylogging, and browser-based attacks. Payload example: <code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">XXE (XML External Entity)</h4>
+              <p class="concept-card__definition">An attack against weakly configured XML parsers — injecting external entity declarations that force the server to fetch internal files or make outbound network requests, enabling SSRF, file disclosure, and DoS.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">JWT Attacks</h4>
+              <p class="concept-card__definition">JSON Web Tokens (format: base64.base64.base64) are used for authentication. Attacks include: none algorithm bypass, weak secret brute-force, algorithm confusion (RS256 to HS256), and key injection — allowing attackers to forge authentication tokens.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Session Fixation</h4>
+              <p class="concept-card__definition">An attacker sets a victim's session ID before authentication — then after the victim logs in, the attacker can use the known session ID to access the account. Prevented by regenerating session IDs upon authentication.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Brute Force Attack</h4>
+              <p class="concept-card__definition">Systematically attempting all possible values for credentials, encryption keys, or hidden resources. Countered by account lockout policies, CAPTCHA, rate limiting, and multi-factor authentication.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Server-Side vs Client-Side Vulnerabilities</h4>
+              <p class="concept-card__definition">Server-side vulnerabilities execute payloads on the server (SQL injection, command injection, LFI, XXE, SSRF — impact: database access, RCE, file disclosure). Client-side vulnerabilities execute in the victim's browser (XSS, CSRF — impact: session theft, unauthorized actions).</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection" id="week6-tools">
+          <h3 class="subsection-title">D. Tools and Platforms</h3>
+          <div class="tool-grid">
+            <div class="tool-card" data-tool="burpsuite" data-category="web-testing">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Burp Suite</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">Web Proxy</span>
+              </div>
+              <p class="tool-card__purpose">The leading web application security testing platform. Core features: intercepting proxy (modify requests in transit), Repeater (replay and modify requests), Scanner (automated vulnerability detection), Intruder (fuzzing and brute-force), Decoder (encoding/decoding utilities).</p>
+              <dl class="tool-card__meta">
+                <dt>URL</dt><dd>portswigger.net</dd>
+                <dt>Setup</dt><dd>Configure browser proxy to 127.0.0.1:8080</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="dvwa" data-category="practice">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">DVWA (Damn Vulnerable Web Application)</h4>
+                <span class="tool-card__badge tool-card__badge--neutral">Practice Lab</span>
+              </div>
+              <p class="tool-card__purpose">Intentionally vulnerable PHP/MySQL web application for practicing SQL injection, XSS, command injection, CSRF, file upload, brute force, and more — at adjustable security levels (Low/Medium/High).</p>
+            </div>
+            <div class="tool-card" data-tool="webgoat" data-category="practice">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">WebGoat (OWASP)</h4>
+                <span class="tool-card__badge tool-card__badge--neutral">Practice Lab</span>
+              </div>
+              <p class="tool-card__purpose">OWASP's deliberately insecure Java web application with guided lessons covering the OWASP Top 10. Includes hints, explanations, and progressively challenging exercises.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection must-memorize" id="week6-memorize">
+          <h3 class="subsection-title">&#11088; Must Memorize — Week 6</h3>
+          <div class="memorize-grid">
+            <div class="memorize-card"><strong>CIA Triad</strong>: Confidentiality, Integrity, Availability</div>
+            <div class="memorize-card"><strong>OWASP Top 10</strong> = most critical web security risks</div>
+            <div class="memorize-card"><strong>CVSS</strong> scores 0-10 (Critical ≥ 9.0)</div>
+            <div class="memorize-card"><strong>Server-side</strong>: SQLi, CMDi, LFI, XXE, SSRF</div>
+            <div class="memorize-card"><strong>Client-side</strong>: XSS, CSRF, Session Fixation</div>
+            <div class="memorize-card"><strong>XSS payload</strong>: &lt;script&gt;alert(document.cookie)&lt;/script&gt;</div>
+            <div class="memorize-card"><strong>Path traversal</strong>: ../../../etc/passwd</div>
+            <div class="memorize-card"><strong>Burp Suite</strong> proxy: 127.0.0.1:8080</div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection exam-questions" id="week6-questions">
+          <h3 class="subsection-title">&#10067; Likely Exam Questions — Week 6</h3>
+          <ol class="exam-question-list">
+            <li class="exam-question">
+              <p class="question-text">Q: What is the CIA Triad? Give an example of a web attack that violates each component.</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p><strong>Confidentiality</strong> (information not disclosed to unauthorized parties) — violated by SQL injection extracting the users table. <strong>Integrity</strong> (data remains accurate and unmodified) — violated by a stored XSS attack injecting malicious scripts into a database that other users then see. <strong>Availability</strong> (systems accessible when needed) — violated by a DDoS attack overwhelming a web server. All three are essential; a secure system must preserve all three simultaneously.</p>
+              </details>
+            </li>
+            <li class="exam-question">
+              <p class="question-text">Q: What is Cross-Site Scripting (XSS)? Describe the difference between reflected and stored XSS.</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>XSS is a vulnerability where attacker-controlled JavaScript is injected into web pages rendered in victim browsers. <strong>Reflected XSS</strong>: the malicious script is included in the URL — the victim must click the crafted link. The script executes once and is not stored on the server. <strong>Stored XSS</strong>: the malicious script is stored on the server (in a database) and executes for every user who views the infected page — without requiring them to click a special link. Stored XSS is more dangerous due to its persistent and automatic nature.</p>
+              </details>
+            </li>
+          </ol>
+        </article>
+      </section>
+
+      <!-- ============================================================
+           WEEK 7: WEB APPLICATION ATTACKS AND VULNERABILITY ASSESSMENT TOOLS
+      ============================================================ -->
+      <section class="lecture-section" id="week7" data-week="7" aria-labelledby="week7-title">
+        <div class="lecture-header">
+          <div class="lecture-week-badge">Week 07</div>
+          <h2 class="lecture-title" id="week7-title">Web Application Attacks and Vulnerability Assessment Tools</h2>
+          <p class="lecture-instructor">Instructor: Assistant Professor, PhD Akzhibek Amirova</p>
+        </div>
+
+        <article class="lecture-subsection" id="week7-overview">
+          <h3 class="subsection-title">A. Lecture Overview</h3>
+          <p class="lecture-overview-text">This lecture bridges the gap between understanding web vulnerabilities theoretically and finding them systematically at scale using automated tools. Students learn the critical distinction between SAST and DAST testing methodologies — and the toolsets that implement each approach. Key tools covered include SonarQube and Graudit (SAST), and OWASP ZAP, OpenVAS/Greenbone, and Nikto (DAST). Students also learn defensive countermeasures including WAFs, YARA rules, and backdoor scanning.</p>
+        </article>
+
+        <article class="lecture-subsection" id="week7-concepts">
+          <h3 class="subsection-title">B. Core Concepts &amp; Definitions</h3>
+          <div class="attack-defense-grid">
+            <div class="attack-card">
+              <h4 class="card-heading">SAST (Static Application Security Testing)</h4>
+              <p><strong>White-box method</strong> — analyzes source code, bytecode, or binaries without executing the application. Finds vulnerabilities early in the development lifecycle (shift-left security). Requires access to source code.</p>
+              <ul>
+                <li>Analyzes code structure, data flow, and control flow</li>
+                <li>Can identify: SQL injection patterns, hardcoded credentials, insecure crypto, input validation flaws</li>
+                <li>No false negatives from runtime state</li>
+                <li>Tools: SonarQube, Graudit, Checkmarx, Semgrep</li>
+              </ul>
+            </div>
+            <div class="defense-card">
+              <h4 class="card-heading">DAST (Dynamic Application Security Testing)</h4>
+              <p><strong>Black-box method</strong> — tests a running application by sending malformed inputs and analyzing responses. No source code access required. Simulates real attacker behavior.</p>
+              <ul>
+                <li>Tests authentication, session management, input handling at runtime</li>
+                <li>Finds: runtime-dependent vulnerabilities, misconfigurations, authentication flaws</li>
+                <li>May miss vulnerabilities that require specific code paths</li>
+                <li>Tools: OWASP ZAP, Nikto, OpenVAS, Burp Suite Scanner</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="concept-grid">
+            <div class="concept-card">
+              <h4 class="concept-card__term">WAF (Web Application Firewall)</h4>
+              <p class="concept-card__definition">A security device (hardware or software) that filters, monitors, and blocks HTTP/S traffic to and from web applications based on rules detecting attack patterns — SQL injection signatures, XSS payloads, path traversal attempts. A detection/delay layer, not a substitute for secure code.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">YARA Rules</h4>
+              <p class="concept-card__definition">A pattern-matching language for malware identification. YARA rules define patterns (strings, byte sequences, conditions) that identify malware families, webshells, or malicious code in files. Widely used by AV vendors and threat intelligence teams. Helped identify encrypted Cobalt Strike payloads.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection" id="week7-tools">
+          <h3 class="subsection-title">D. Tools and Platforms</h3>
+          <div class="tool-grid">
+            <div class="tool-card" data-tool="sonarqube" data-category="sast">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">SonarQube</h4>
+                <span class="tool-card__badge tool-card__badge--neutral">SAST</span>
+              </div>
+              <p class="tool-card__purpose">Enterprise-grade static analysis platform supporting 25+ languages (Java, C#, JavaScript, Python, PHP, Go, etc.). Identifies bugs, code smells, security hotspots, and vulnerabilities. Integrates with CI/CD pipelines.</p>
+              <dl class="tool-card__meta">
+                <dt>URL</dt><dd>sonarqube.org</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="graudit" data-category="sast">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Graudit</h4>
+                <span class="tool-card__badge tool-card__badge--neutral">SAST</span>
+              </div>
+              <p class="tool-card__purpose">Open-source, signature-based static analysis tool. Supports multiple languages. Lightweight and fast — ideal for quick security reviews of unfamiliar codebases. Signatures can be added manually.</p>
+              <dl class="tool-card__meta">
+                <dt>URL</dt><dd>github.com/wireghoul/graudit</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="owaspzap" data-category="dast">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">OWASP ZAP</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">DAST</span>
+              </div>
+              <p class="tool-card__purpose">Free, open-source web application security scanner. Features: active and passive scanning, intercepting proxy, automated crawler, fuzzer, and API testing. The leading free alternative to Burp Suite Pro.</p>
+              <dl class="tool-card__meta">
+                <dt>URL</dt><dd>zaproxy.org</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="openvas" data-category="dast">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">OpenVAS / Greenbone</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">Vulnerability Scanner</span>
+              </div>
+              <p class="tool-card__purpose">Full-featured network vulnerability scanner. Tests for 50,000+ known vulnerabilities across network services and web applications. Now branded as Greenbone Security Manager (GSM). Enterprise-grade open-source alternative to Nessus.</p>
+            </div>
+            <div class="tool-card" data-tool="nikto" data-category="dast">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Nikto</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">DAST</span>
+              </div>
+              <p class="tool-card__purpose">Open-source web server scanner — checks for 6,700+ dangerous files, outdated server software, default credentials, and common misconfigurations. Fast and noisy (not stealthy). Available natively in Kali Linux.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection must-memorize" id="week7-memorize">
+          <h3 class="subsection-title">&#11088; Must Memorize — Week 7</h3>
+          <div class="memorize-grid">
+            <div class="memorize-card"><strong>SAST</strong> = Static (white-box, source code analysis)</div>
+            <div class="memorize-card"><strong>DAST</strong> = Dynamic (black-box, running application)</div>
+            <div class="memorize-card"><strong>SonarQube</strong> = enterprise SAST platform</div>
+            <div class="memorize-card"><strong>OWASP ZAP</strong> = free DAST web scanner</div>
+            <div class="memorize-card"><strong>Nikto</strong> = web server misconfiguration scanner</div>
+            <div class="memorize-card"><strong>WAF</strong> filters HTTP traffic → detection layer (not a silver bullet)</div>
+            <div class="memorize-card"><strong>YARA</strong> = pattern matching for malware/webshell detection</div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection exam-questions" id="week7-questions">
+          <h3 class="subsection-title">&#10067; Likely Exam Questions — Week 7</h3>
+          <ol class="exam-question-list">
+            <li class="exam-question">
+              <p class="question-text">Q: What is the difference between SAST and DAST? Which finds more vulnerability types?</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>SAST (Static Application Security Testing) analyzes source code without executing it — it can find vulnerabilities across the entire codebase including code paths that are rarely exercised at runtime. It requires source code access. DAST (Dynamic Application Security Testing) tests a running application from the outside — simulating attacker behavior. It finds runtime-dependent vulnerabilities and misconfigurations but may miss vulnerabilities in unreachable code paths. Neither approach is complete alone — security best practice combines both (and adds IAST — Interactive AST — for comprehensive coverage).</p>
+              </details>
+            </li>
+          </ol>
+        </article>
+      </section>
+
+      <!-- ============================================================
+           WEEK 8: SQL INJECTION VULNERABILITIES
+      ============================================================ -->
+      <section class="lecture-section" id="week8" data-week="8" aria-labelledby="week8-title">
+        <div class="lecture-header">
+          <div class="lecture-week-badge">Week 08</div>
+          <h2 class="lecture-title" id="week8-title">Website Hacking – SQL Injection Vulnerabilities</h2>
+          <p class="lecture-instructor">Instructor: Senior Lecturer Balziya Aldosh, School of Cybersecurity</p>
+        </div>
+
+        <article class="lecture-subsection" id="week8-overview">
+          <h3 class="subsection-title">A. Lecture Overview</h3>
+          <p class="lecture-overview-text">SQL Injection remains one of the oldest, most pervasive, and most catastrophic web application vulnerability classes — consistently featured in every OWASP Top 10 since its inception. This lecture provides a deep foundation in both SQL fundamentals and the mechanics of injection attacks. Students learn how relational databases work, the types of SQL commands, how injection vulnerabilities arise from improper input handling, and how attackers exploit them — from basic WHERE clause bypass to UNION-based data extraction. Hands-on labs use PortSwigger Web Academy and Burp Suite.</p>
+        </article>
+
+        <article class="lecture-subsection" id="week8-concepts">
+          <h3 class="subsection-title">B. Core Concepts &amp; Definitions</h3>
+          <div class="concept-grid">
+            <div class="concept-card">
+              <h4 class="concept-card__term">SQL (Structured Query Language)</h4>
+              <p class="concept-card__definition">The standard language for managing relational databases — querying, inserting, updating, deleting data, and controlling access. Developed by IBM (Chamberlin &amp; Boyce) in the 1970s. Standardized by ANSI (1986) and ISO (1987). Dialects include T-SQL (SQL Server) and PL/SQL (Oracle).</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">SQL Injection (SQLi)</h4>
+              <p class="concept-card__definition">A vulnerability class where attacker-controlled input is concatenated with SQL queries — allowing manipulation of query logic, data extraction, authentication bypass, and (in some configurations) operating system command execution.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">UNION-Based SQLi</h4>
+              <p class="concept-card__definition">Uses the SQL UNION operator to append additional SELECT statements to the original query — allowing extraction of data from arbitrary tables. Requires matching the column count and data types of the original query.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Boolean-Based Blind SQLi</h4>
+              <p class="concept-card__definition">When the application returns different responses for true vs. false conditions — but does not display database content directly. Attackers infer data character-by-character by observing behavioral differences in responses.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Time-Based Blind SQLi</h4>
+              <p class="concept-card__definition">Infers data from application response timing — injecting conditional delay functions (SLEEP(), WAITFOR DELAY). If the application pauses when a condition is true, data can be extracted one bit at a time.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Error-Based SQLi</h4>
+              <p class="concept-card__definition">Exploits verbose database error messages that include extracted data. The injected query is crafted to cause a database error that contains the value of interest in the error message displayed to the attacker.</p>
+            </div>
+          </div>
+
+          <h4 class="subsection-subheading">SQL Command Categories</h4>
+          <table class="comparison-table" aria-label="SQL command categories">
+            <thead>
+              <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Abbreviation</th>
+                <th scope="col">Commands</th>
+                <th scope="col">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Data Query Language</td><td>DQL</td><td>SELECT</td><td>Retrieve data from tables</td></tr>
+              <tr><td>Data Manipulation Language</td><td>DML</td><td>INSERT, UPDATE, DELETE, JOIN</td><td>Add, modify, and remove data</td></tr>
+              <tr><td>Data Definition Language</td><td>DDL</td><td>CREATE, ALTER, DROP, TRUNCATE</td><td>Define and modify table structure</td></tr>
+              <tr><td>Data Control Language</td><td>DCL</td><td>GRANT, REVOKE</td><td>Control user permissions</td></tr>
+              <tr><td>Transaction Control Language</td><td>TCL</td><td>COMMIT, ROLLBACK, SAVEPOINT</td><td>Manage transaction integrity</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="lecture-subsection" id="week8-notes">
+          <h3 class="subsection-title">C. Expanded Academic Notes</h3>
+
+          <h4 class="subsection-subheading">How SQL Injection Works — Step by Step</h4>
+          <p>The fundamental principle: <strong>user-controlled data is concatenated with SQL query strings</strong>, causing the database to interpret attacker-supplied input as SQL commands rather than data values.</p>
+          <div class="code-block">
+            <p><strong>Vulnerable Code Pattern:</strong></p>
+            <code>query = "SELECT * FROM users WHERE username='" + username + "' AND password='" + password + "'"</code>
+            <p><strong>Normal Input:</strong> username = <em>alice</em>, password = <em>secret123</em></p>
+            <code>SELECT * FROM users WHERE username='alice' AND password='secret123'</code>
+            <p><strong>Attack Input:</strong> username = <em>admin'--</em>, password = <em>anything</em></p>
+            <code>SELECT * FROM users WHERE username='admin'-- AND password='anything'</code>
+            <p>The <code>--</code> comments out the rest of the query. The password check is eliminated. Attacker logs in as admin without knowing the password.</p>
+          </div>
+
+          <h4 class="subsection-subheading">UNION Attack — Extracting Data</h4>
+          <div class="code-block">
+            <p><strong>Step 1: Determine column count</strong></p>
+            <code>' UNION SELECT 'abc','def'--</code>
+            <p>If two columns exist, "abc" and "def" appear in output. If error, adjust column count.</p>
+            <p><strong>Step 2: Extract database version (MySQL)</strong></p>
+            <code>' UNION SELECT @@version, NULL--</code>
+            <p><strong>Step 3: Extract database version (Oracle)</strong></p>
+            <code>' UNION SELECT banner, NULL FROM v$version--</code>
+          </div>
+
+          <h4 class="subsection-subheading">Historical SQLi Breaches</h4>
+          <div class="real-world-grid">
+            <div class="real-world-card">
+              <h5>Heartland Payment Systems (2007–2008)</h5>
+              <p>SQL injection compromised 130+ million credit/debit card numbers. At the time, the largest known data breach in US history. Total cost exceeded $140 million.</p>
+            </div>
+            <div class="real-world-card">
+              <h5>NASA (2009)</h5>
+              <p>SQL injection exposed administrative credentials of 25 employees at NASA's Instrument Systems and Technology Division — demonstrating even critical infrastructure organizations are vulnerable.</p>
+            </div>
+            <div class="real-world-card">
+              <h5>Wall Street Journal (2014)</h5>
+              <p>Attacker gained database access and offered to sell the newspaper's reader data online, demonstrating the monetization of SQLi breaches beyond immediate credential theft.</p>
+            </div>
+          </div>
+
+          <h4 class="subsection-subheading">Testing for SQL Injection — Basic Approach</h4>
+          <p>The single rule for detecting SQLi: <strong>trigger anomalies by sending unexpected data</strong>. Test all input points — GET parameters, POST body, cookies, HTTP headers, path parameters.</p>
+          <ul class="detail-list">
+            <li>Append <code>'</code> (single quote) — causes database syntax error if vulnerable</li>
+            <li>Append <code>''</code> (two single quotes) — fixes the error (value still treated as data)</li>
+            <li>Boolean tests: <code>' OR '1'='1</code> (always true) vs <code>' OR '1'='2</code> (always false)</li>
+            <li>Time delays: <code>'; SLEEP(5)--</code> — if page takes 5+ seconds, time-based blind SQLi likely exists</li>
+          </ul>
+        </article>
+
+        <article class="lecture-subsection" id="week8-tools">
+          <h3 class="subsection-title">D. Tools and Platforms</h3>
+          <div class="tool-grid">
+            <div class="tool-card" data-tool="burpsuite-sqli" data-category="web-testing">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">Burp Suite (SQLi Testing)</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">Interception</span>
+              </div>
+              <p class="tool-card__purpose">Intercept HTTP requests to modify SQL-injectable parameters. Use Repeater to replay modified requests. Use Intruder to automate injection payload testing. Essential for manual SQLi verification.</p>
+            </div>
+            <div class="tool-card" data-tool="portswigger-academy" data-category="practice">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">PortSwigger Web Security Academy</h4>
+                <span class="tool-card__badge tool-card__badge--neutral">Practice Platform</span>
+              </div>
+              <p class="tool-card__purpose">Free, world-class web security training with hands-on labs covering every SQL injection type. Reference: portswigger.net/web-security/sql-injection. Includes SQL Injection Cheat Sheet for multi-database reference.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection must-memorize" id="week8-memorize">
+          <h3 class="subsection-title">&#11088; Must Memorize — Week 8</h3>
+          <div class="memorize-grid">
+            <div class="memorize-card"><strong>SQLi root cause</strong>: user input concatenated with SQL queries</div>
+            <div class="memorize-card"><strong>Auth bypass</strong>: <code>admin'--</code> in username field</div>
+            <div class="memorize-card"><strong>UNION attack</strong>: must match original query column count</div>
+            <div class="memorize-card"><strong>MySQL version</strong>: <code>@@version</code></div>
+            <div class="memorize-card"><strong>Oracle version</strong>: <code>SELECT banner FROM v$version</code></div>
+            <div class="memorize-card"><strong>Oracle quirk</strong>: always requires <code>FROM dual</code></div>
+            <div class="memorize-card"><strong>MySQL comment</strong>: <code>#</code> | <strong>Standard</strong>: <code>--</code></div>
+            <div class="memorize-card">6 SQLi types: Boolean Blind, Time Blind, Error, UNION, Stacked Queries, Out-of-Band</div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection exam-questions" id="week8-questions">
+          <h3 class="subsection-title">&#10067; Likely Exam Questions — Week 8</h3>
+          <ol class="exam-question-list">
+            <li class="exam-question">
+              <p class="question-text">Q: Explain the concept of SQL injection. How does an attacker bypass authentication using SQLi?</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>SQL injection occurs when user-controlled input is concatenated into SQL queries without parameterization, allowing the input to be interpreted as SQL code. For authentication bypass: if the login query is <code>SELECT * FROM users WHERE username='[input]' AND password='[input]'</code>, injecting <code>admin'--</code> as the username produces <code>SELECT * FROM users WHERE username='admin'--' AND password='anything'</code>. The <code>--</code> comments out the password check, returning the admin user without password verification.</p>
+              </details>
+            </li>
+            <li class="exam-question">
+              <p class="question-text">Q: What is a UNION-based SQL injection attack? What conditions must be met for it to work?</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>A UNION-based attack appends an additional SELECT statement to the original query using the UNION operator — extracting data from arbitrary tables. For UNION to work: (1) the number of columns in the injected SELECT must match the original query, (2) the data types of corresponding columns must be compatible, and (3) the application must display the additional results. Attackers determine column count by incrementally adding NULL columns until no error occurs, then replace NULLs with data-extracting expressions.</p>
+              </details>
+            </li>
+          </ol>
+        </article>
+      </section>
+
+      <!-- ============================================================
+           WEEK 9: ADVANCED SQL INJECTION AND DATABASE EXPLOITATION
+      ============================================================ -->
+      <section class="lecture-section" id="week9" data-week="9" aria-labelledby="week9-title">
+        <div class="lecture-header">
+          <div class="lecture-week-badge">Week 09</div>
+          <h2 class="lecture-title" id="week9-title">Advanced SQL Injection and Database Exploitation Concepts</h2>
+          <p class="lecture-instructor">Instructor: Senior Lecturer Balziya Aldosh, School of Cybersecurity</p>
+        </div>
+
+        <article class="lecture-subsection" id="week9-overview">
+          <h3 class="subsection-title">A. Lecture Overview</h3>
+          <p class="lecture-overview-text">This lecture advances from basic SQL injection theory to professional-grade code review methodology and defense architecture. Students learn to read application code and systematically identify every user-controlled input source that could reach a database query. The lecture establishes a severity impact model (Critical/High/Medium/Low) based on query location, affected tables, and authentication requirements. Defense sections cover parameterized queries, input whitelisting, least-privilege database accounts, centralized query layers, WAF deployment, and database hardening — presenting the complete picture from attack to remediation.</p>
+        </article>
+
+        <article class="lecture-subsection" id="week9-concepts">
+          <h3 class="subsection-title">B. Core Concepts &amp; Definitions</h3>
+          <div class="concept-grid">
+            <div class="concept-card">
+              <h4 class="concept-card__term">Parameterized Queries</h4>
+              <p class="concept-card__definition">The primary defense against SQL injection. Query structure and user data are sent to the database separately — the database compiles the query first, then slots in the values. Values cannot be interpreted as SQL commands regardless of content. Also called "prepared statements."</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Input Whitelisting</h4>
+              <p class="concept-card__definition">For cases where parameterization is impossible (column names, table names, ORDER BY direction) — define an allowlist of acceptable values in code. Any input not on the list is rejected or replaced with a safe default.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Least Privilege (Database)</h4>
+              <p class="concept-card__definition">The application's database account should have only the minimum permissions required for its legitimate functionality. A read-only app shouldn't have INSERT/UPDATE/DROP. Limits blast radius of successful injection.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">Centralized Query Layer</h4>
+              <p class="concept-card__definition">A single codebase module through which all database interactions are routed — enforcing parameterization structurally. Makes it hard (or impossible) to write unsafe queries, eliminating developer inconsistency as a vulnerability source.</p>
+            </div>
+          </div>
+
+          <h4 class="subsection-subheading">SQLi Severity Impact Model</h4>
+          <table class="comparison-table" aria-label="SQLi severity classification">
+            <thead>
+              <tr>
+                <th scope="col">Severity</th>
+                <th scope="col">Conditions</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row--critical"><td><strong>CRITICAL</strong></td><td>Unauthenticated + touches credentials/auth logic</td><td>/login — any attacker can bypass authentication, dump passwords</td></tr>
+              <tr class="row--high"><td><strong>HIGH</strong></td><td>Authenticated + touches sensitive data (payments, secrets)</td><td>/orders — authenticated user exposes all users' financial records</td></tr>
+              <tr class="row--medium"><td><strong>MEDIUM</strong></td><td>Authenticated + touches application data (products, content)</td><td>/search — injects into products table (limited sensitivity)</td></tr>
+              <tr class="row--low"><td><strong>LOW</strong></td><td>Admin-only access, limited blast radius</td><td>/admin/report — requires compromised admin account first</td></tr>
+            </tbody>
+          </table>
+
+          <h4 class="subsection-subheading">User-Controlled Input Sources — Code Review Checklist</h4>
+          <p>When reviewing code for SQL injection, trace ALL input sources — not just obvious form fields:</p>
+          <ul class="detail-list">
+            <li><strong>URL query string</strong> — <code>request.args.get('id')</code> from <code>/product?id=1</code></li>
+            <li><strong>POST body</strong> — <code>request.form.get('username')</code> from login forms</li>
+            <li><strong>URL path parameters</strong> — <code>/user/3</code> where "3" is extracted and used in query</li>
+            <li><strong>HTTP Headers</strong> — User-Agent (logged to DB), X-Forwarded-For (IP logging), Accept-Language (localization queries)</li>
+            <li><strong>Cookies</strong> — session_id (session lookup), user_pref (theme queries), last_search (search functionality)</li>
+          </ul>
+        </article>
+
+        <article class="lecture-subsection" id="week9-notes">
+          <h3 class="subsection-title">C. Expanded Academic Notes — Code-Level Defenses</h3>
+
+          <div class="attack-defense-grid">
+            <div class="attack-card">
+              <h4 class="card-heading card-heading--offensive">&#10060; Vulnerable Pattern</h4>
+              <div class="code-block">
+                <code>query = "SELECT * FROM users WHERE username='" + username + "'"</code>
+                <p>Attack: username = <em>admin'--</em></p>
+                <code>SELECT * FROM users WHERE username='admin'-- [password check gone]</code>
+              </div>
+            </div>
+            <div class="defense-card">
+              <h4 class="card-heading card-heading--defensive">&#9989; Parameterized Query</h4>
+              <div class="code-block">
+                <code>cursor.execute("SELECT * FROM users WHERE username = ?", (username,))</code>
+                <p>Attack: username = <em>admin'--</em></p>
+                <code>DB searches literally for user named "admin'--" → finds nothing → login fails</code>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="subsection-subheading">Least Privilege Defense in Action</h4>
+          <p>Even if injection succeeds, least privilege limits attacker actions:</p>
+          <ul class="detail-list">
+            <li>Attacker tries: <code>' UNION SELECT * FROM admin_keys--</code> → Result: <em>permission denied</em> (app_user has no SELECT on admin_keys)</li>
+            <li>Attacker tries: <code>'; DROP TABLE users--</code> → Result: <em>permission denied</em> (app_user has no DROP privilege)</li>
+            <li>Attacker tries: <code>'; INSERT INTO users VALUES ('hacker','pass','admin')--</code> → Blocked if app is read-only</li>
+          </ul>
+
+          <h4 class="subsection-subheading">Platform-Level Defenses</h4>
+          <div class="concept-grid concept-grid--small">
+            <div class="defense-card">
+              <h5>Database Hardening</h5>
+              <p>Disable features not needed by the application: xp_cmdshell (SQL Server), LOAD_FILE, INTO OUTFILE (MySQL), UTL_HTTP (Oracle). Reduce default attack surface.</p>
+            </div>
+            <div class="defense-card">
+              <h5>Web Application Firewall (WAF)</h5>
+              <p>Inspects every HTTP request for known SQLi patterns before it reaches application code. Blocks automated scanners and script kiddies. Not a substitute for parameterized queries — skilled attackers bypass WAFs regularly.</p>
+            </div>
+            <div class="defense-card">
+              <h5>Network Isolation</h5>
+              <p>Database server in a private network segment — accessible only from application servers, not from the internet. Prevents attackers from pivoting to the database server even after code injection.</p>
+            </div>
+            <div class="defense-card">
+              <h5>Error Handling</h5>
+              <p>Never display verbose database errors to users. Log errors server-side. Generic error messages ("Something went wrong") prevent error-based SQLi and hide database structure from attackers.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection" id="week9-tools">
+          <h3 class="subsection-title">D. Tools and Platforms</h3>
+          <div class="tool-grid">
+            <div class="tool-card" data-tool="sqlmap" data-category="exploitation">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">sqlmap</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">SQLi Automation</span>
+              </div>
+              <p class="tool-card__purpose">Open-source penetration testing tool that automates SQLi detection and exploitation. Supports all 6 injection techniques, 30+ database engines, data extraction, schema enumeration, password hash cracking, and (in some configurations) OS command execution.</p>
+              <dl class="tool-card__meta">
+                <dt>URL</dt><dd>github.com/sqlmapproject/sqlmap</dd>
+                <dt>Databases</dt><dd>MySQL, Oracle, PostgreSQL, MSSQL, SQLite, MariaDB, + 20 more</dd>
+                <dt>6 techniques</dt><dd>Boolean blind, Time blind, Error, UNION, Stacked, Out-of-band</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="pentesterlab" data-category="practice">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">PentesterLab</h4>
+                <span class="tool-card__badge tool-card__badge--neutral">Practice</span>
+              </div>
+              <p class="tool-card__purpose">Hands-on web security training platform. Key exercise for this lecture: "From SQLi to Shell" — pentesterlab.com/exercises/from-sqli-to-shell</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection must-memorize" id="week9-memorize">
+          <h3 class="subsection-title">&#11088; Must Memorize — Week 9</h3>
+          <div class="memorize-grid">
+            <div class="memorize-card"><strong>Primary defense</strong>: Parameterized queries (prepared statements)</div>
+            <div class="memorize-card"><strong>When param. impossible</strong>: Whitelist allowed values in code</div>
+            <div class="memorize-card"><strong>Least privilege</strong>: App DB user only gets needed permissions</div>
+            <div class="memorize-card"><strong>WAF</strong> = detection layer, not prevention silver bullet</div>
+            <div class="memorize-card"><strong>CRITICAL SQLi</strong>: unauthenticated + credential table</div>
+            <div class="memorize-card"><strong>Input sources to check</strong>: URL params, POST body, cookies, HTTP headers, path params</div>
+            <div class="memorize-card"><strong>sqlmap</strong> automates all 6 injection techniques</div>
+            <div class="memorize-card">Centralized query layer = structural enforcement of parameterization</div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection exam-questions" id="week9-questions">
+          <h3 class="subsection-title">&#10067; Likely Exam Questions — Week 9</h3>
+          <ol class="exam-question-list">
+            <li class="exam-question">
+              <p class="question-text">Q: Why are parameterized queries the primary defense against SQL injection? How do they work?</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>Parameterized queries work by separating the SQL command structure from the data values. The application sends the query template to the database first (e.g., <code>SELECT * FROM users WHERE username = ?</code>), which is compiled. The values are then sent separately and slotted into the pre-compiled structure. Because the structure is already compiled, the database cannot interpret the values as SQL commands — a payload like <code>admin'--</code> is searched for literally as a username string, not interpreted as SQL. This separation makes injection structurally impossible regardless of what the attacker provides as input.</p>
+              </details>
+            </li>
+            <li class="exam-question">
+              <p class="question-text">Q: You find a SQLi vulnerability in a /search route that queries the products table and requires authentication. What severity would you assign and why?</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>MEDIUM severity. Reasoning: (1) Authentication is required — reduces attack surface to authenticated users only, not all internet attackers. (2) The affected table is products — a low-sensitivity table containing no credentials, personal data, or financial records. (3) Impact is limited to dumping product information that may already be partially public. If the same vulnerability existed without authentication or in a table containing credentials or payment data, severity would increase to HIGH or CRITICAL respectively.</p>
+              </details>
+            </li>
+          </ol>
+        </article>
+      </section>
+
+      <!-- ============================================================
+           WEEK 10: CYBERSECURITY TRAINING PLATFORMS AND HACKING TOOLS
+      ============================================================ -->
+      <section class="lecture-section" id="week10" data-week="10" aria-labelledby="week10-title">
+        <div class="lecture-header">
+          <div class="lecture-week-badge">Week 10</div>
+          <h2 class="lecture-title" id="week10-title">Cybersecurity Training Platforms and Hacking Tools</h2>
+          <p class="lecture-instructor">Instructor: Hacking Lab Faculty, School of Cybersecurity</p>
+        </div>
+
+        <article class="lecture-subsection" id="week10-overview">
+          <h3 class="subsection-title">A. Lecture Overview</h3>
+          <p class="lecture-overview-text">The final lecture consolidates the course by mapping the full ecosystem of cybersecurity training platforms, practice labs, CTF (Capture the Flag) competitions, and professional tools available for continued learning beyond the classroom. Students receive a curated guide to platforms where they can legally practice the techniques learned throughout the course — from beginner-friendly guided paths to advanced real-world machine challenges. The lecture also reviews key wordlist resources and automated testing frameworks.</p>
+        </article>
+
+        <article class="lecture-subsection" id="week10-platforms">
+          <h3 class="subsection-title">B. Training Platforms Overview</h3>
+          <div class="tool-grid">
+            <div class="tool-card" data-tool="tryhackme" data-category="training">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">TryHackMe</h4>
+                <span class="tool-card__badge tool-card__badge--neutral">Beginner-Friendly</span>
+              </div>
+              <p class="tool-card__purpose">Browser-based guided learning platform. Offers structured learning paths from absolute beginner to advanced. No local VPN configuration required for most labs. Ideal starting point for this course's topics.</p>
+              <dl class="tool-card__meta">
+                <dt>Best for</dt><dd>Beginners, structured learning paths</dd>
+                <dt>Notable paths</dt><dd>Pre-Security, SOC Level 1, Jr Penetration Tester</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="hackthebox" data-category="training">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">HackTheBox (HTB)</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">Intermediate-Advanced</span>
+              </div>
+              <p class="tool-card__purpose">Industry-renowned platform with realistic vulnerable machines and CTF challenges. VPN connection required. Used by security professionals for skills development and demonstrating competence to employers.</p>
+              <dl class="tool-card__meta">
+                <dt>Best for</dt><dd>Intermediate-advanced learners, job portfolio building</dd>
+                <dt>Features</dt><dd>CPTS/CBBH certifications, Pro Labs, Battlegrounds</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="portswigger" data-category="training">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">PortSwigger Web Security Academy</h4>
+                <span class="tool-card__badge tool-card__badge--neutral">Web Security</span>
+              </div>
+              <p class="tool-card__purpose">Free, world-class web application security training with 250+ interactive labs. Covers all OWASP Top 10 vulnerabilities with theoretical lessons, worked examples, and hands-on labs. Best free resource for web security.</p>
+              <dl class="tool-card__meta">
+                <dt>URL</dt><dd>portswigger.net/web-security</dd>
+                <dt>Certification</dt><dd>BSCP (Burp Suite Certified Practitioner)</dd>
+              </dl>
+            </div>
+            <div class="tool-card" data-tool="pentesterlab" data-category="training">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">PentesterLab</h4>
+                <span class="tool-card__badge tool-card__badge--neutral">Web + Exploitation</span>
+              </div>
+              <p class="tool-card__purpose">Hands-on web security and exploitation training. Key exercises include "From SQLi to Shell" demonstrating complete database-to-OS exploitation chains. Badge-based progression system.</p>
+            </div>
+            <div class="tool-card" data-tool="dvwa2" data-category="local-lab">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">DVWA (Damn Vulnerable Web App)</h4>
+                <span class="tool-card__badge tool-card__badge--neutral">Local Lab</span>
+              </div>
+              <p class="tool-card__purpose">Intentionally vulnerable PHP/MySQL application for local practice. Security levels: Low (no protection), Medium (basic filtering), High (near-correct protection), Impossible (secure reference implementation). Categories: SQLi, XSS, CSRF, Command Injection, File Upload, Brute Force, LFI.</p>
+            </div>
+            <div class="tool-card" data-tool="webgoat2" data-category="local-lab">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">WebGoat (OWASP)</h4>
+                <span class="tool-card__badge tool-card__badge--neutral">Local Lab</span>
+              </div>
+              <p class="tool-card__purpose">OWASP's deliberately insecure Java web application with guided lessons, hints, and explanations. Covers OWASP Top 10 with progressive challenges. Ideal for understanding both attack and defense perspectives.</p>
+            </div>
+            <div class="tool-card" data-tool="wifichallenge" data-category="wireless-lab">
+              <div class="tool-card__header">
+                <h4 class="tool-card__name">WiFiChallenge Lab</h4>
+                <span class="tool-card__badge tool-card__badge--offensive">Wireless</span>
+              </div>
+              <p class="tool-card__purpose">Virtual machine-based wireless security lab environment. Simulates multiple wireless networks (OPN, WEP, WPA2, WPA3) for hands-on practice with aircrack-ng, aireplay-ng, and Wireshark. Importable as .OVA file into VirtualBox.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection" id="week10-wordlists">
+          <h3 class="subsection-title">C. Essential Wordlist Resources</h3>
+          <div class="concept-grid">
+            <div class="concept-card">
+              <h4 class="concept-card__term">SecLists</h4>
+              <p class="concept-card__definition">The most comprehensive collection of wordlists for security testing — subdomains, directories, passwords, usernames, fuzzing payloads, and more. Essential resource for all enumeration tasks. github.com/danielmiessler/SecLists</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">FuzzDB</h4>
+              <p class="concept-card__definition">Attack patterns and primitives for fuzzing web applications — payloads for XSS, SQLi, command injection, path traversal, and more. github.com/fuzzdb-project/fuzzdb</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">rockyou.txt</h4>
+              <p class="concept-card__definition">The most famous password wordlist — 14+ million real passwords leaked from the 2009 RockYou breach. Pre-installed in Kali Linux at <code>/usr/share/wordlists/rockyou.txt</code>. Used for dictionary attacks on WPA2, login forms, and hashes.</p>
+            </div>
+            <div class="concept-card">
+              <h4 class="concept-card__term">DirBuster Wordlists</h4>
+              <p class="concept-card__definition">Directory and file enumeration wordlists at three sizes: small (87,664 entries), medium (220,560 entries), big (1,273,819 entries). Choose based on time constraints and thoroughness requirements.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection" id="week10-certifications">
+          <h3 class="subsection-title">D. Professional Certifications Roadmap</h3>
+          <table class="comparison-table" aria-label="Cybersecurity certifications roadmap">
+            <thead>
+              <tr>
+                <th scope="col">Certification</th>
+                <th scope="col">Provider</th>
+                <th scope="col">Level</th>
+                <th scope="col">Focus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>CompTIA Security+</td><td>CompTIA</td><td>Entry</td><td>Broad security fundamentals — often required for IT roles</td></tr>
+              <tr><td>CEH (Certified Ethical Hacker)</td><td>EC-Council</td><td>Intermediate</td><td>Ethical hacking methodology and tools — widely recognized by employers</td></tr>
+              <tr><td>OSCP (Offensive Security Certified Professional)</td><td>Offensive Security</td><td>Advanced</td><td>24-hour hands-on pen testing exam — industry gold standard for red teamers</td></tr>
+              <tr><td>BSCP (Burp Suite Certified Practitioner)</td><td>PortSwigger</td><td>Intermediate</td><td>Web application penetration testing with Burp Suite</td></tr>
+              <tr><td>eJPT (Junior Penetration Tester)</td><td>eLearnSecurity</td><td>Entry</td><td>Practical entry-level penetration testing certification</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="lecture-subsection must-memorize" id="week10-memorize">
+          <h3 class="subsection-title">&#11088; Must Memorize — Week 10</h3>
+          <div class="memorize-grid">
+            <div class="memorize-card"><strong>TryHackMe</strong> = beginner-friendly, guided, browser-based</div>
+            <div class="memorize-card"><strong>HackTheBox</strong> = professional-grade realistic machines</div>
+            <div class="memorize-card"><strong>PortSwigger Academy</strong> = best free web security training</div>
+            <div class="memorize-card"><strong>DVWA</strong> = local vulnerable PHP app for practice</div>
+            <div class="memorize-card"><strong>WebGoat</strong> = OWASP guided Java vulnerable app</div>
+            <div class="memorize-card"><strong>SecLists</strong> = comprehensive wordlist collection (GitHub)</div>
+            <div class="memorize-card"><strong>rockyou.txt</strong> = 14M+ real leaked passwords, Kali built-in</div>
+            <div class="memorize-card"><strong>OSCP</strong> = industry gold standard for pen testing certification</div>
+          </div>
+        </article>
+
+        <article class="lecture-subsection exam-questions" id="week10-questions">
+          <h3 class="subsection-title">&#10067; Likely Exam Questions — Week 10</h3>
+          <ol class="exam-question-list">
+            <li class="exam-question">
+              <p class="question-text">Q: Compare TryHackMe and HackTheBox as training platforms. Which would you recommend for a beginner and why?</p>
+              <details class="model-answer">
+                <summary>Model Answer</summary>
+                <p>TryHackMe is recommended for beginners because it offers guided, structured learning paths with step-by-step instructions, hints, and progressive difficulty — no prior experience required. Most labs run in the browser without complex VPN setup. HackTheBox is better suited for intermediate-to-advanced learners — machines are more realistic and challenging, require VPN connection, and provide minimal guidance. HTB is widely recognized by security employers as a demonstration of practical skills. A recommended progression: start with TryHackMe's "Jr Penetration Tester" path, then move to HackTheBox for real-world challenge experience.</p>
+              </details>
+            </li>
+          </ol>
+        </article>
+      </section>
+
+      <!-- ============================================================
+           READING LIST
+      ============================================================ -->
+      <section class="lecture-section" id="reading-list" aria-labelledby="reading-title">
+        <div class="lecture-header">
+          <div class="lecture-week-badge">&#128218;</div>
+          <h2 class="lecture-title" id="reading-title">Reading List</h2>
+        </div>
+        <article class="lecture-subsection">
+          <h3 class="subsection-title">Basic Literature</h3>
+          <ol class="reading-list">
+            <li class="reading-item">
+              <p class="reading-citation">Aldasheva L.S., Abdiraman A.S., Amanzholova S.T., Issagalyeva Z.A. <em>Introduction to Hacking Lab: Study Guide.</em> Almaty: Daryn, 2024. 200 p.</p>
+              <p class="reading-note">Primary course textbook — covers all 10 weeks of this course.</p>
+            </li>
+            <li class="reading-item">
+              <p class="reading-citation">Glen D. Singh. <em>The Ultimate Kali Linux Book.</em> 2nd ed. Birmingham: Packt Publishing Ltd., January 2022. 718 p.</p>
+              <p class="reading-note">Comprehensive reference for Kali Linux tools and penetration testing techniques.</p>
+            </li>
+          </ol>
+          <h3 class="subsection-title">Supplementary Literature</h3>
+          <ol class="reading-list">
+            <li class="reading-item">
+              <p class="reading-citation">Jeremy Martin. <em>Hacking Lab with Kali: Build a Portable Cyber Live Fire Range.</em> 1st ed. Great Britain: Information Warfare Center, 2020. 60 p.</p>
+            </li>
+            <li class="reading-item">
+              <p class="reading-citation">Ric Messier. <em>CEH v12 Certified Ethical Hacker Study Guide.</em> 1st ed. UK: Wiley, 2023. 724 p.</p>
+              <p class="reading-note">Excellent preparation for the CEH certification exam. Includes 750 practice questions and 100 electronic flashcards.</p>
+            </li>
+          </ol>
+        </article>
+      </section>
+
+      <!-- ============================================================
+           GLOSSARY
+      ============================================================ -->
+      <section class="lecture-section" id="glossary" aria-labelledby="glossary-title">
+        <div class="lecture-header">
+          <div class="lecture-week-badge">&#128196;</div>
+          <h2 class="lecture-title" id="glossary-title">Master Glossary</h2>
+        </div>
+        <article class="lecture-subsection">
+          <div class="glossary-grid">
+            <dl class="glossary-list">
+              <dt class="glossary-term">APT</dt>
+              <dd class="glossary-def">Advanced Persistent Threat — a sophisticated, prolonged cyberattack by well-resourced actors (often nation-state) targeting specific organizations</dd>
+
+              <dt class="glossary-term">BEC</dt>
+              <dd class="glossary-def">Business Email Compromise — fraudulent emails impersonating executives to authorize financial transfers</dd>
+
+              <dt class="glossary-term">BSSID</dt>
+              <dd class="glossary-def">Basic Service Set Identifier — the MAC address of a wireless access point</dd>
+
+              <dt class="glossary-term">CAPTCHA</dt>
+              <dd class="glossary-def">Completely Automated Public Turing test to tell Computers and Humans Apart — prevents automated brute-force attacks</dd>
+
+              <dt class="glossary-term">CIA Triad</dt>
+              <dd class="glossary-def">Confidentiality, Integrity, Availability — the three core pillars of information security</dd>
+
+              <dt class="glossary-term">CVE</dt>
+              <dd class="glossary-def">Common Vulnerabilities and Exposures — standardized identifier for publicly known security vulnerabilities (e.g., CVE-2021-44228)</dd>
+
+              <dt class="glossary-term">CVSS</dt>
+              <dd class="glossary-def">Common Vulnerability Scoring System — numerical (0–10) severity rating for vulnerabilities</dd>
+
+              <dt class="glossary-term">DAST</dt>
+              <dd class="glossary-def">Dynamic Application Security Testing — black-box testing of running applications</dd>
+
+              <dt class="glossary-term">DNS</dt>
+              <dd class="glossary-def">Domain Name System — translates human-readable domain names to IP addresses</dd>
+
+              <dt class="glossary-term">ESSID</dt>
+              <dd class="glossary-def">Extended Service Set Identifier — the human-readable Wi-Fi network name (SSID)</dd>
+
+              <dt class="glossary-term">Exploit</dt>
+              <dd class="glossary-def">A technique or code that takes advantage of a vulnerability to achieve an unauthorized effect</dd>
+
+              <dt class="glossary-term">IDS</dt>
+              <dd class="glossary-def">Intrusion Detection System — passive system that detects and alerts on suspicious activity</dd>
+
+              <dt class="glossary-term">IPS</dt>
+              <dd class="glossary-def">Intrusion Prevention System — active system that detects AND blocks suspicious activity</dd>
+
+              <dt class="glossary-term">IV</dt>
+              <dd class="glossary-def">Initialization Vector — a random value used with encryption; WEP's 24-bit IVs are its fatal weakness</dd>
+
+              <dt class="glossary-term">JWT</dt>
+              <dd class="glossary-def">JSON Web Token — compact, URL-safe authentication token (format: header.payload.signature)</dd>
+
+              <dt class="glossary-term">MFA</dt>
+              <dd class="glossary-def">Multi-Factor Authentication — requires two or more verification methods before granting access</dd>
+
+              <dt class="glossary-term">NSE</dt>
+              <dd class="glossary-def">Nmap Scripting Engine — Lua-based scripting framework for extending Nmap with custom scripts</dd>
+
+              <dt class="glossary-term">OSINT</dt>
+              <dd class="glossary-def">Open Source Intelligence — intelligence collected from publicly available sources</dd>
+
+              <dt class="glossary-term">OWASP</dt>
+              <dd class="glossary-def">Open Web Application Security Project — non-profit producing the OWASP Top 10 and security guides</dd>
+
+              <dt class="glossary-term">Parameterized Query</dt>
+              <dd class="glossary-def">SQL query where structure and user data are sent separately — the primary defense against SQL injection</dd>
+
+              <dt class="glossary-term">Payload</dt>
+              <dd class="glossary-def">The malicious code or data component of an exploit — what is delivered after exploitation</dd>
+
+              <dt class="glossary-term">Phishing</dt>
+              <dd class="glossary-def">Mass-distributed fraudulent communications impersonating trusted entities to harvest credentials or deliver malware</dd>
+
+              <dt class="glossary-term">Privilege Escalation</dt>
+              <dd class="glossary-def">Gaining higher levels of access than initially obtained — from user to admin, or from app to OS</dd>
+
+              <dt class="glossary-term">SAE</dt>
+              <dd class="glossary-def">Simultaneous Authentication of Equals — WPA3's "Dragonfly" authentication protocol replacing WPA2's PSK</dd>
+
+              <dt class="glossary-term">SAST</dt>
+              <dd class="glossary-def">Static Application Security Testing — white-box code analysis without executing the application</dd>
+
+              <dt class="glossary-term">SIEM</dt>
+              <dd class="glossary-def">Security Information and Event Management — aggregates and correlates security logs for threat detection</dd>
+
+              <dt class="glossary-term">SQL Injection</dt>
+              <dd class="glossary-def">Vulnerability where attacker-controlled input manipulates database queries — enabling data theft, authentication bypass, and (sometimes) RCE</dd>
+
+              <dt class="glossary-term">SSRF</dt>
+              <dd class="glossary-def">Server-Side Request Forgery — exploiting a server to make HTTP requests to internal/external resources on behalf of the attacker</dd>
+
+              <dt class="glossary-term">Threat Hunting</dt>
+              <dd class="glossary-def">Proactive, human-led investigation to detect attacker presence not caught by automated systems</dd>
+
+              <dt class="glossary-term">Vulnerability</dt>
+              <dd class="glossary-def">A weakness or flaw in a system that could be exploited to compromise security</dd>
+
+              <dt class="glossary-term">WAF</dt>
+              <dd class="glossary-def">Web Application Firewall — HTTP traffic filter that blocks known attack patterns</dd>
+
+              <dt class="glossary-term">WHOIS</dt>
+              <dd class="glossary-def">Protocol/database for querying domain registration information — ownership, registrar, name servers</dd>
+
+              <dt class="glossary-term">XSS</dt>
+              <dd class="glossary-def">Cross-Site Scripting — injection of malicious JavaScript into web pages rendered in victim browsers</dd>
+
+              <dt class="glossary-term">XXE</dt>
+              <dd class="glossary-def">XML External Entity — attack against weakly configured XML parsers enabling file disclosure and SSRF</dd>
+
+              <dt class="glossary-term">YARA</dt>
+              <dd class="glossary-def">Pattern-matching language for malware and threat identification in files</dd>
+
+              <dt class="glossary-term">Zero-Day</dt>
+              <dd class="glossary-def">A vulnerability unknown to the vendor — no patch exists; often used in sophisticated targeted attacks</dd>
+            </dl>
+          </div>
+        </article>
+      </section>
+
+    </main>
+    <!-- END MAIN CONTENT -->
+
+  </div>
+  <!-- END LAYOUT WRAPPER -->
+
+  <!-- ============================================================
+       SITE FOOTER
+  ============================================================ -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-section">
+        <h3 class="footer-heading">HackLab Portal</h3>
+        <p class="footer-text">Interactive Ethical Hacking &amp; Cybersecurity Preparation Platform</p>
+        <p class="footer-text">Based on the Hacking Lab course, Astana IT University, School of Cybersecurity</p>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-heading">Instructors</h3>
+        <ul class="footer-list">
+          <li>Senior Lecturer, MSc Aliya Abdiraman — <a href="mailto:aliya.abdiraman@astanait.edu.kz">aliya.abdiraman@astanait.edu.kz</a></li>
+          <li>Senior Lecturer Balziya Aldosh — School of Cybersecurity</li>
+          <li>Assistant Professor, PhD Akzhibek Amirova — <a href="mailto:akzhibek.amirova@astanait.edu.kz">akzhibek.amirova@astanait.edu.kz</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-heading">Useful Links</h3>
+        <ul class="footer-list">
+          <li><a href="https://owasp.org/www-project-top-ten/" rel="noopener noreferrer" target="_blank">OWASP Top 10</a></li>
+          <li><a href="https://portswigger.net/web-security/sql-injection/cheat-sheet" rel="noopener noreferrer" target="_blank">SQLi Cheat Sheet (PortSwigger)</a></li>
+          <li><a href="https://www.kali.org/" rel="noopener noreferrer" target="_blank">Kali Linux Official</a></li>
+          <li><a href="https://nmap.org/" rel="noopener noreferrer" target="_blank">Nmap Official</a></li>
+          <li><a href="https://github.com/sqlmapproject/sqlmap" rel="noopener noreferrer" target="_blank">sqlmap (GitHub)</a></li>
+          <li><a href="https://github.com/danielmiessler/SecLists" rel="noopener noreferrer" target="_blank">SecLists (GitHub)</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-heading">Ethical Disclaimer</h3>
+        <p class="footer-text">This portal is for educational purposes, cybersecurity awareness, and ethical penetration testing preparation only. All techniques described must be practiced only in authorized environments or dedicated lab platforms. Unauthorized access to computer systems is illegal under all jurisdictions.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 HackLab Portal | Astana IT University | School of Cybersecurity | For Educational Use Only</p>
+    </div>
+  </footer>
+
+</body>
+</html>
