@@ -174,60 +174,48 @@ html {
   -webkit-text-size-adjust: 100%;
   tab-size: 2;
 }
-.creator-header {
-  width: 100%;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 1000;
+:root {
+  --header-name-color: #111827;
+  --header-gh-color: #9ca3af;
+  --header-gh-hover: #4b5563;
+  --header-border: rgba(0, 0, 0, 0.08);
 }
 
-.creator-container {
+[data-theme="dark"] {
+  --header-name-color: #ffffff;
+  --header-gh-color: rgba(255, 255, 255, 0.5);
+  --header-gh-hover: rgba(255, 255, 255, 0.85);
+  --header-border: rgba(255, 255, 255, 0.08);
+}
+
+.creator-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-
-  padding: 8px 14px;
-
-  border-radius: 999px;
-
-  background: rgba(255, 255, 255, 0.06);
-
-  backdrop-filter: blur(12px);
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  box-shadow:
-    0 0 20px rgba(0, 255, 255, 0.06),
-    0 4px 20px rgba(0, 0, 0, 0.25);
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--header-border);
 }
 
 .creator-name {
-  font-size: 0.82rem;
   font-weight: 600;
-  color: #ffffff;
-  letter-spacing: 0.3px;
+  color: var(--header-name-color);
+  letter-spacing: -0.01em;
 }
 
-.creator-social {
-  display: flex;
+.creator-ig {
+  display: inline-flex;
   align-items: center;
-  gap: 5px;
-
+  gap: 0.3rem;
+  color: var(--header-gh-color);
   text-decoration: none;
-
-  color: #7dd3fc;
-
-  font-size: 0.8rem;
-  font-weight: 500;
-
-  transition: all 0.25s ease;
+  transition: color 0.2s;
 }
 
-.creator-social:hover {
-  color: #22d3ee;
-  transform: translateY(-1px);
+.creator-ig:hover {
+  color: var(--header-gh-hover);
 }
 
 body,
