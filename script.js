@@ -248,16 +248,18 @@ const Sidebar = {
     State.sidebarOpen = true;
     this.el.classList.add('sidebar--open');
     this.el.removeAttribute('aria-hidden');
-    document.body.style.overflow = 'hidden';
-    /* REMOVED: touchAction = 'none' was blocking ALL touch events
-       including taps on sidebar buttons and nav links */
+
+    /* Use a body class instead of overflow:hidden — avoids iOS touch swallowing.
+       The CSS rule body.sidebar-is-open disables pointer-events on background
+       content rather than locking the scroll container, so sidebar taps work. */
+    document.body.classList.add('sidebar-is-open');
 
     this.overlay.style.opacity = '1';
     this.overlay.style.pointerEvents = 'auto';
 
     if (this.toggle) {
       this.toggle.setAttribute('aria-expanded', 'true');
-      this.toggle.innerHTML = '&#10005;'; // ✕
+      this.toggle.innerHTML = '&#10005;';
     }
   },
 
@@ -266,15 +268,15 @@ const Sidebar = {
     State.sidebarOpen = false;
     this.el.classList.remove('sidebar--open');
     this.el.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    /* touchAction cleanup no longer needed — was removed from openMobile */
+
+    document.body.classList.remove('sidebar-is-open');
 
     this.overlay.style.opacity = '0';
     this.overlay.style.pointerEvents = 'none';
 
     if (this.toggle) {
       this.toggle.setAttribute('aria-expanded', 'false');
-      this.toggle.innerHTML = '&#9776;'; // ☰
+      this.toggle.innerHTML = '&#9776;';
     }
   },
 
@@ -317,7 +319,7 @@ const Sidebar = {
     if (wasMobile && !State.isMobile) {
       // Transitioned to desktop — clean up mobile state
       this.closeMobile();
-      document.body.style.overflow = '';
+      document.body.classList.remove('sidebar-is-open');
       if (!State.sidebarVisible) this.collapseDesktop();
       else this.expandDesktop();
     }
