@@ -154,16 +154,6 @@
   --shadow-lg:        0 8px 32px rgba(0, 0, 0, 0.12);
   --shadow-glow:      0 0 24px rgba(0, 136, 204, 0.12);
   --shadow-glow-sm:   0 0 12px rgba(0, 136, 204, 0.1);
-   
-   --header-name-color: #ffffff;
-  --header-gh-color: rgba(255, 255, 255, 0.5);
-  --header-gh-hover: rgba(255, 255, 255, 0.85);
-  --header-border: rgba(255, 255, 255, 0.08);
-
-   --header-name-color: #111827;
-  --header-gh-color: #9ca3af;
-  --header-gh-hover: #4b5563;
-  --header-border: rgba(0, 0, 0, 0.08);
 }
 
 
@@ -183,37 +173,6 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   tab-size: 2;
-}
-
-
-.creator-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  padding: 0.6rem 1rem;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 0.85rem;
-  border-bottom: 1px solid var(--header-border);
-}
-
-.creator-name {
-  font-weight: 600;
-  color: var(--header-name-color);
-  letter-spacing: -0.01em;
-}
-
-.creator-ig {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  color: var(--header-gh-color);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.creator-ig:hover {
-  color: var(--header-gh-hover);
 }
 
 body,
@@ -2531,4 +2490,164 @@ p {
 
 .skip-to-main:focus {
   top: 1rem;
+}
+/* ============================================================
+   CREATOR BADGE — Floating top-center
+   ============================================================ */
+.creator-badge {
+  position: fixed;
+  top: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1100;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.35rem 0.85rem 0.35rem 0.4rem;
+  background: var(--surface-glass);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--border-accent);
+  border-radius: 999px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 212, 255, 0.08);
+  cursor: default;
+  user-select: none;
+  white-space: nowrap;
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.creator-badge:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4), var(--shadow-glow-sm);
+}
+
+.creator-badge__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #fff;
+  font-family: -apple-system, sans-serif;
+  flex-shrink: 0;
+  letter-spacing: 0;
+}
+
+.creator-badge__text {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.creator-badge__name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.creator-badge__handle {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--accent);
+  font-family: 'SF Mono', 'JetBrains Mono', monospace;
+  letter-spacing: 0.02em;
+}
+
+.creator-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 6px var(--success);
+  flex-shrink: 0;
+  animation: dotPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.7); }
+}
+
+/* ============================================================
+   MOBILE MENU BUG FIXES
+   ============================================================ */
+
+/*
+  FIX 1: Sidebar pointer-events must be auto when visible.
+  The CSS rule `.sidebar--collapsed { transform: translateX(-100%) }` existed
+  but there was no rule restoring pointer-events for the open state.
+  On mobile, sidebar starts transformed away; sidebar--open brings it back.
+*/
+.sidebar {
+  /* Override: ensure pointer-events follow transform state */
+  pointer-events: auto;
+}
+
+/* When sidebar is off-screen (mobile default), block pointer events */
+@media (max-width: 768px) {
+  .sidebar:not(.sidebar--open) {
+    pointer-events: none;
+  }
+
+  .sidebar.sidebar--open {
+    pointer-events: auto;
+    /* Ensure sidebar content is always above the overlay */
+    z-index: 510 !important;
+  }
+}
+
+/*
+  FIX 2: Overlay must sit BELOW the sidebar (z-index hierarchy).
+  sidebar-overlay z-index: 490 (set in JS inline style — patched in JS section)
+  sidebar z-index when open: 510 (set above)
+*/
+
+/*
+  FIX 3: Prevent the scanline pseudo-element from intercepting touches
+  on dark mode (the ::before covers the full viewport).
+*/
+[data-theme="dark"] .site-body::before {
+  pointer-events: none !important;
+  touch-action: none;
+}
+
+/*
+  FIX 4: Ensure the layout wrapper and main content never create
+  a stacking context that traps the sidebar overlay.
+*/
+.layout-wrapper {
+  isolation: auto;
+}
+
+/* ============================================================
+   CREATOR BADGE — Responsive
+   ============================================================ */
+@media (max-width: 480px) {
+  .creator-badge {
+    top: 0.5rem;
+    padding: 0.3rem 0.65rem 0.3rem 0.35rem;
+    gap: 0.4rem;
+  }
+
+  .creator-badge__name {
+    font-size: 0.67rem;
+  }
+
+  .creator-badge__handle {
+    font-size: 0.6rem;
+  }
+
+  .creator-badge__avatar {
+    width: 20px;
+    height: 20px;
+    font-size: 0.6rem;
+  }
 }
